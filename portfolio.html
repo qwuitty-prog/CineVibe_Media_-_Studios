@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | CineVibe Media & Studios | Premium Video Production</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background-color: #0a0b0f;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            transition: all 0.4s ease;
+        }
+
+        .header.scrolled {
+            background-color: rgba(10, 11, 15, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .logo-accent {
+            color: #00c6ff;
+            margin-right: 8px;
+        }
+
+        .logo-text {
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #00c6ff;
+        }
+
+        .nav-link.active {
+            color: #00c6ff;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        /* Hero Section - Matched exactly with index.html */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(10, 11, 15, 0.9) 0%, rgba(10, 11, 15, 0.7) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero-subtitle {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00c6ff;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 68px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            background: linear-gradient(90deg, #ffffff, #b0b8d0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #b0b8d0;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .secondary-button {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            border-color: #00c6ff;
+            color: #00c6ff;
+        }
+
+        /* Portfolio Intro */
+        .portfolio-intro {
+            background-color: #0f1117;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00c6ff;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .intro-text h3 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        .intro-text p {
+            color: #b0b8d0;
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .intro-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: rgba(21, 24, 33, 0.5);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #00c6ff;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #b0b8d0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .intro-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Portfolio Filter */
+        .portfolio-filter {
+            background-color: #0a0b0f;
+            padding: 50px 0 0;
+        }
+
+        .filter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            padding: 12px 28px;
+            background-color: #151821;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            color: #b0b8d0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            color: #00c6ff;
+            border-color: rgba(0, 198, 255, 0.3);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: #0a0b0f;
+            border-color: transparent;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid-section {
+            background-color: #0a0b0f;
+            padding-top: 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 500px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-item.featured {
+            grid-column: span 2;
+            grid-row: span 2;
+            height: 1030px;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 40px;
+            background: linear-gradient(transparent, rgba(10, 11, 15, 0.95));
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .portfolio-category {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #00c6ff;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-description {
+            color: #b0b8d0;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-link {
+            display: inline-flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            color: #00c6ff;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-link i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Video Showcase */
+        .video-showcase {
+            background-color: #0f1117;
+            position: relative;
+        }
+
+        .video-container {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-player {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(10, 11, 15, 0.9));
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .video-info h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .video-info p {
+            color: #b0b8d0;
+            font-size: 16px;
+        }
+
+        .play-button {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Client Testimonials */
+        .testimonials-section {
+            background-color: #0a0b0f;
+        }
+
+        .testimonials-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            background-color: #151821;
+            border-radius: 8px;
+            padding: 50px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: none;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial-content {
+            font-size: 20px;
+            color: #b0b8d0;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .testimonial-content:before {
+            content: '"';
+            font-size: 80px;
+            color: #00c6ff;
+            position: absolute;
+            top: -40px;
+            left: -20px;
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .client-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #00c6ff;
+        }
+
+        .client-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .client-details h4 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .client-details p {
+            color: #b0b8d0;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .testimonial-control {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #151821;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .testimonial-control:hover {
+            background-color: #00c6ff;
+            color: #0a0b0f;
+        }
+
+        /* Awards Section */
+        .awards-section {
+            background-color: #0f1117;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .award-item {
+            background-color: #151821;
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .award-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 198, 255, 0.2);
+        }
+
+        .award-icon {
+            font-size: 48px;
+            color: #00c6ff;
+            margin-bottom: 20px;
+        }
+
+        .award-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .award-year {
+            color: #b0b8d0;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        /* Clients Section */
+        .clients-section {
+            background-color: #0a0b0f;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .client-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            filter: grayscale(100%) brightness(2);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .client-logo:hover {
+            filter: grayscale(0%) brightness(1);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(90deg, #0f1117 0%, #151821 100%);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ffffff, #b0b8d0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .cta-description {
+            font-size: 18px;
+            color: #b0b8d0;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #07080c;
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .footer-description {
+            color: #b0b8d0;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #151821;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: #00c6ff;
+            color: #0a0b0f;
+        }
+
+        .footer-heading {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #b0b8d0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00c6ff;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            color: #b0b8d0;
+        }
+
+        .contact-info i {
+            color: #00c6ff;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: #b0b8d0;
+            font-size: 14px;
+        }
+
+        /* Portfolio Modal */
+        .portfolio-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 11, 15, 0.95);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: #151821;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(50px);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background-color: #00c6ff;
+            color: #0a0b0f;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .modal-details {
+            padding: 50px;
+        }
+
+        .modal-category {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #00c6ff;
+            margin-bottom: 15px;
+        }
+
+        .modal-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .modal-description {
+            color: #b0b8d0;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .modal-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .info-item h4 {
+            font-size: 16px;
+            color: #00c6ff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-item p {
+            color: #b0b8d0;
+            font-size: 16px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .hero-title {
+                font-size: 56px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .portfolio-item.featured {
+                grid-column: span 2;
+                grid-row: span 1;
+                height: 500px;
+            }
+            
+            .awards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .clients-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .intro-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-item.featured {
+                grid-column: span 1;
+            }
+            
+            .video-player {
+                height: 400px;
+            }
+            
+            .awards-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .clients-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: #0a0b0f;
+                padding: 30px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+            
+            .nav-menu.active {
+                display: block;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 40px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cta-button, .secondary-button {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .intro-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-player {
+                height: 300px;
+            }
+            
+            .modal-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .portfolio-item {
+                height: 400px;
+            }
+            
+            .testimonial-slide {
+                padding: 30px 20px;
+            }
+            
+            .client-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .client-details h4,
+            .client-details p {
+                text-align: center;
+            }
+            
+            .modal-details {
+                padding: 30px 20px;
+            }
+            
+            .modal-title {
+                font-size: 28px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">CineVibe</span>
+                <span class="logo-text">Media & Studios</span>
+            </a>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <a href="contact.html" class="cta-button">Start a Project</a>
+        </div>
+    </header>
+
+    <!-- Hero Section - Exactly matching index.html -->
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://github.com/qwuitty-prog/CineVibe_Media_-_Studios/raw/main/assets/videos/hero.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-subtitle">Featured Projects</span>
+                <h1 class="hero-title">Showcasing Cinematic Excellence</h1>
+                <p class="hero-description">
+                    Explore our portfolio of award-winning video productions, 3D animations, and visual effects 
+                    that have captivated audiences and delivered exceptional results for our clients worldwide.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="cta-button">View Our Work</a>
+                    <a href="contact.html" class="secondary-button">Start Your Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Intro -->
+    <section class="portfolio-intro section">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h3>Where Vision Meets Execution</h3>
+                    <p>
+                        For over a decade, CineVibe Media & Studios has been transforming creative concepts into 
+                        stunning visual realities. Our portfolio showcases the diverse range of projects we've 
+                        brought to life for clients across industries.
+                    </p>
+                    <p>
+                        From blockbuster films to innovative commercial campaigns, each project represents our 
+                        commitment to excellence, technical precision, and artistic innovation. We take pride in 
+                        pushing creative boundaries while delivering measurable results for our clients.
+                    </p>
+                    
+                    <div class="intro-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">120+</div>
+                            <div class="stat-label">Projects Delivered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">48</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">Industry Awards</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Portfolio Showcase">
+                </div>
+            </div>
+        </div>
+    </section><!-- Portfolio Filter -->
+    <section class="portfolio-filter section" id="portfolio">
+        <div class="container filter-container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="film">Film & TV</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="animation">3D Animation</button>
+                <button class="filter-btn" data-filter="vfx">Visual Effects</button>
+                <button class="filter-btn" data-filter="music">Music Videos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-grid-section section">
+        <div class="container">
+            <div class="portfolio-grid">
+                <!-- Featured Project -->
+                <div class="portfolio-item featured" data-category="film vfx">
+                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Nexus Horizon" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Film & VFX</span>
+                        <h3 class="portfolio-title">"Nexus Horizon" Sci-Fi Feature</h3>
+                        <p class="portfolio-description">
+                            Award-winning sci-fi film featuring 200+ VFX shots, full 3D environments, 
+                            and groundbreaking creature effects. Delivered for global theatrical release.
+                        </p>
+                        <a href="#" class="portfolio-link view-project" data-project="nexus">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Commercial Project -->
+                <div class="portfolio-item" data-category="commercial animation">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Aurora Tech" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Commercial & Animation</span>
+                        <h3 class="portfolio-title">Aurora Tech Brand Campaign</h3>
+                        <p class="portfolio-description">
+                            Complete brand launch campaign featuring 3D product animations, motion graphics, 
+                            and multi-format video content for global tech company.
+                        </p>
+                        <a href="#" class="portfolio-link view-project" data-project="aurora">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Music Video -->
+                <div class="portfolio-item" data-category="music vfx">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Neon Dreams" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Music Video & VFX</span>
+                        <h3 class="portfolio-title">"Neon Dreams" Music Visuals</h3>
+                        <p class="portfolio-description">
+                            Visual effects heavy music video featuring surreal environments, particle effects, 
+                            and real-time CGI integration for chart-topping electronic artist.
+                        </p>
+                        <a href="#" class="portfolio-link view-project" data-project="neon">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Documentary -->
+                <div class="portfolio-item" data-category="film">
+                    <img src="https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ocean Depths" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Documentary Film</span>
+                        <h3 class="portfolio-title">"Ocean Depths" Documentary</h3>
+                        <p class="portfolio-description">
+                            Feature-length nature documentary with underwater cinematography, 3D marine life 
+                            animations, and immersive sound design for streaming platform.
+                        </p>
+                        <a href="#" class="portfolio-link view-project" data-project="ocean">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Corporate Video -->
+                <div class="portfolio-item" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Veridian Corporate" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Corporate Video</span>
+                        <h3 class="portfolio-title">Veridian Annual Report Video</h3>
+                        <p class="portfolio-description">
+                            Animated corporate report video combining data visualization, executive interviews, 
+                            and motion graphics for Fortune 500 company's shareholder presentation.
+                        </p>
+                        <a href="#" class="portfolio-link view-project" data-project="veridian">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Game Trailer -->
+                <div class="portfolio-item" data-category="animation vfx">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cyber Realms" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Game Trailer & Animation</span>
+                        <h3 class="portfolio-title">"Cyber Realms" Game Trailer</h3>
+                        <p class="portfolio-description">
+                            Cinematic game trailer featuring real-time rendered 3D animations, character 
+                            close-ups, and explosive visual effects for AAA game studio launch.
+                        </p>
+                        <a href="#" class="portfolio-link view-project" data-project="cyber">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase -->
+    <section class="video-showcase section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Featured Video</span>
+                <h2 class="section-title">Project Spotlight</h2>
+            </div>
+            
+            <div class="video-container">
+                <video class="video-player" id="featuredVideo" poster="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-road-in-a-forest-41574-large.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                    <div class="video-info">
+                        <h3>"Nexus Horizon" Behind the Scenes</h3>
+                        <p>See how we created the stunning visual effects for this award-winning sci-fi film</p>
+                    </div>
+                    <div class="play-button" id="playButton">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="testimonials-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Client Feedback</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        Working with CineVibe Media & Studios transformed our brand campaign. Their attention 
+                        to detail and creative vision exceeded all expectations. The final product not only 
+                        captivated our audience but significantly boosted our engagement metrics.
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Alex Johnson">
+                        </div>
+                        <div class="client-details">
+                            <h4>Alex Johnson</h4>
+                            <p>Marketing Director, Aurora Tech</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        The visual effects work CineVibe delivered for our feature film was nothing short of 
+                        spectacular. They brought our director's vision to life with technical precision and 
+                        artistic flair. The seamless integration of CGI with live-action footage was flawless.
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Sarah Chen">
+                        </div>
+                        <div class="client-details">
+                            <h4>Sarah Chen</h4>
+                            <p>Producer, Nexus Horizon Productions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        As a music artist, the visual representation of my work is crucial. CineVibe created 
+                        a music video that perfectly captured the emotion and energy of my song. Their team's 
+                        creativity and technical expertise resulted in a visual masterpiece that went viral.
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Jamie Wilson">
+                        </div>
+                        <div class="client-details">
+                            <h4>Jamie Wilson</h4>
+                            <p>Recording Artist</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-controls">
+                    <div class="testimonial-control" id="prevTestimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="testimonial-control" id="nextTestimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Recognition</span>
+                <h2 class="section-title">Awards & Accolades</h2>
+            </div>
+            
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="award-title">Best Visual Effects</h3>
+                    <p class="award-year">2023 Film Awards</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="award-title">Excellence in Animation</h3>
+                    <p class="award-year">2022 Creative Arts</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="award-title">Innovation Award</h3>
+                    <p class="award-year">2021 Tech & Media</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="award-title">Best Commercial</h3>
+                    <p class="award-year">2020 Advertising</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Trusted By</span>
+                <h2 class="section-title">Our Clients</h2>
+            </div>
+            
+            <div class="clients-grid">
+                <div class="client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon">
+                </div>
+                <div class="client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="Google">
+                </div>
+                <div class="client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/488px-Apple_logo_black.svg.png" alt="Apple">
+                </div>
+                <div class="client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" alt="Netflix">
+                </div>
+                <div class="client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="Samsung">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+        <div class="container">
+            <div class="cta-container">
+                <h2 class="cta-title">Ready to Create Something Extraordinary?</h2>
+                <p class="cta-description">
+                    Partner with CineVibe Media & Studios to bring your vision to life with professional video 
+                    production, 3D animation, and visual effects that captivate audiences and elevate your brand.
+                </p>
+                <a href="contact.html" class="cta-button">Start Your Project Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span style="color: #00c6ff;">CineVibe</span> Media & Studios
+                    </div>
+                    <p class="footer-description">
+                        Transforming creative visions into cinematic reality through expert video editing, 
+                        3D animation, and visual effects.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-vimeo-v"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#editing">Video Editing</a></li>
+                        <li><a href="services.html#animation">3D Animation</a></li>
+                        <li><a href="services.html#vfx">Visual Effects</a></li>
+                        <li><a href="services.html">Motion Graphics</a></li>
+                        <li><a href="services.html">Color Grading</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Studio Boulevard<br>Los Angeles, CA 90210</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@cinevibemedia.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 CineVibe Media & Studios. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portfolio Modal -->
+    <div class="portfolio-modal" id="portfolioModal">
+        <div class="modal-content">
+            <div class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </div>
+            <img src="" alt="Project Image" class="modal-image" id="modalImage">
+            <div class="modal-details">
+                <span class="modal-category" id="modalCategory">Film & VFX</span>
+                <h2 class="modal-title" id="modalTitle">Project Title</h2>
+                <p class="modal-description" id="modalDescription">
+                    Project description will appear here with full details about the project, 
+                    including challenges, solutions, and results.
+                </p>
+                
+                <div class="modal-info">
+                    <div class="info-item">
+                        <h4>Client</h4>
+                        <p id="modalClient">Client Name</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Year</h4>
+                        <p id="modalYear">2023</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Services</h4>
+                        <p id="modalServices">Video Editing, VFX</p>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="cta-button">Start Similar Project</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Video fallback for browsers that don't autoplay
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.hero-video');
+            video.play().catch(error => {
+                console.log('Hero video autoplay failed:', error);
+            });
+        });
+
+        // Portfolio filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Filter portfolio items
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all') {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else if (item.getAttribute('data-category').includes(filterValue)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Video player controls
+        const featuredVideo = document.getElementById('featuredVideo');
+        const playButton = document.getElementById('playButton');
+        let isPlaying = false;
+        
+        playButton.addEventListener('click', function() {
+            if (isPlaying) {
+                featuredVideo.pause();
+                playButton.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                featuredVideo.play();
+                playButton.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        featuredVideo.addEventListener('click', function() {
+            if (isPlaying) {
+                featuredVideo.pause();
+                playButton.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                featuredVideo.play();
+                playButton.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        featuredVideo.addEventListener('ended', function() {
+            playButton.innerHTML = '<i class="fas fa-play"></i>';
+            isPlaying = false;
+        });
+
+        // Testimonial slider
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const prevButton = document.getElementById('prevTestimonial');
+        const nextButton = document.getElementById('nextTestimonial');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            testimonialSlides[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        prevButton.addEventListener('click', function() {
+            let newIndex = currentSlide - 1;
+            if (newIndex < 0) newIndex = testimonialSlides.length - 1;
+            showSlide(newIndex);
+        });
+        
+        nextButton.addEventListener('click', function() {
+            let newIndex = currentSlide + 1;
+            if (newIndex >= testimonialSlides.length) newIndex = 0;
+            showSlide(newIndex);
+        });
+        
+        // Auto-rotate testimonials every 5 seconds
+        setInterval(() => {
+            let newIndex = currentSlide + 1;
+            if (newIndex >= testimonialSlides.length) newIndex = 0;
+            showSlide(newIndex);
+        }, 5000);
+
+        // Portfolio modal
+        const portfolioModal = document.getElementById('portfolioModal');
+        const modalClose = document.getElementById('modalClose');
+        const viewProjectLinks = document.querySelectorAll('.view-project');
+        
+        // Project data for modal
+        const projectData = {
+            nexus: {
+                category: "Film & VFX",
+                title: '"Nexus Horizon" Sci-Fi Feature',
+                description: "Award-winning sci-fi film featuring 200+ VFX shots, full 3D environments, and groundbreaking creature effects. Our team worked for 18 months to deliver this cinematic masterpiece that premiered at international film festivals and received critical acclaim for its visual innovation.",
+                client: "Nexus Horizon Productions",
+                year: "2023",
+                services: "Visual Effects, 3D Animation, Compositing, Color Grading",
+                image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+            },
+            aurora: {
+                category: "Commercial & Animation",
+                title: "Aurora Tech Brand Campaign",
+                description: "Complete brand launch campaign for global tech company featuring 3D product animations, motion graphics, and multi-format video content. The campaign increased product awareness by 45% and generated over 2 million social media impressions in the first month.",
+                client: "Aurora Tech",
+                year: "2022",
+                services: "3D Animation, Motion Graphics, Video Production, Editing",
+                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            neon: {
+                category: "Music Video & VFX",
+                title: '"Neon Dreams" Music Visuals',
+                description: "Visual effects heavy music video featuring surreal environments, particle effects, and real-time CGI integration for chart-topping electronic artist. The video garnered 10 million views in its first week and won Best Music Video at the Visual Arts Awards.",
+                client: "Independent Artist",
+                year: "2023",
+                services: "Visual Effects, CGI Integration, Color Grading, Editing",
+                image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            ocean: {
+                category: "Documentary Film",
+                title: '"Ocean Depths" Documentary',
+                description: "Feature-length nature documentary with underwater cinematography, 3D marine life animations, and immersive sound design. The documentary premiered on a major streaming platform and has been praised for its educational value and stunning visuals.",
+                client: "Nature Documentary Network",
+                year: "2021",
+                services: "Documentary Editing, 3D Animation, Sound Design, Color Correction",
+                image: "https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            veridian: {
+                category: "Corporate Video",
+                title: "Veridian Annual Report Video",
+                description: "Animated corporate report video combining data visualization, executive interviews, and motion graphics for Fortune 500 company's shareholder presentation. The video simplified complex financial data and increased shareholder engagement by 30%.",
+                client: "Veridian Corporation",
+                year: "2022",
+                services: "Motion Graphics, Data Visualization, Corporate Video Production",
+                image: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            cyber: {
+                category: "Game Trailer & Animation",
+                title: '"Cyber Realms" Game Trailer',
+                description: "Cinematic game trailer featuring real-time rendered 3D animations, character close-ups, and explosive visual effects for AAA game studio launch. The trailer generated 5 million views and significantly boosted pre-order sales for the game.",
+                client: "CyberRealms Studio",
+                year: "2023",
+                services: "3D Animation, Game Cinematics, Visual Effects, Sound Design",
+                image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            }
+        };
+        
+        // Open modal when clicking on view project links
+        viewProjectLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const projectId = this.getAttribute('data-project');
+                const project = projectData[projectId];
+                
+                if (project) {
+                    document.getElementById('modalCategory').textContent = project.category;
+                    document.getElementById('modalTitle').textContent = project.title;
+                    document.getElementById('modalDescription').textContent = project.description;
+                    document.getElementById('modalClient').textContent = project.client;
+                    document.getElementById('modalYear').textContent = project.year;
+                    document.getElementById('modalServices').textContent = project.services;
+                    document.getElementById('modalImage').src = project.image;
+                    
+                    portfolioModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Close modal
+        modalClose.addEventListener('click', function() {
+            portfolioModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        portfolioModal.addEventListener('click', function(e) {
+            if (e.target === portfolioModal) {
+                portfolioModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Portfolio item animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply to portfolio items
+        document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            item.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(item);
+        });
+        
+        // Apply to award items
+        document.querySelectorAll('.award-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            item.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
