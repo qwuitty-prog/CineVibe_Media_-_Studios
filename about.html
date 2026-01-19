@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | CineVibe Media & Studios | Premium Video Production</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background-color: #0a0b0f;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            transition: all 0.4s ease;
+        }
+
+        .header.scrolled {
+            background-color: rgba(10, 11, 15, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .logo-accent {
+            color: #00c6ff;
+            margin-right: 8px;
+        }
+
+        .logo-text {
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #00c6ff;
+        }
+
+        .nav-link.active {
+            color: #00c6ff;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            height: 70vh;
+            min-height: 600px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(90deg, #0a0b0f 0%, #151821 100%);
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .page-hero-subtitle {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00c6ff;
+            margin-bottom: 20px;
+        }
+
+        .page-hero-title {
+            font-size: 68px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            background: linear-gradient(90deg, #ffffff, #b0b8d0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .page-hero-description {
+            font-size: 18px;
+            color: #b0b8d0;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        /* About Intro */
+        .about-intro {
+            background-color: #0f1117;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00c6ff;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .about-intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-intro-text h3 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        .about-intro-text p {
+            color: #b0b8d0;
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .about-intro-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: rgba(21, 24, 33, 0.5);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #00c6ff;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #b0b8d0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-intro-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-intro-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Team Section */
+        .team-section {
+            background-color: #0a0b0f;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .team-member {
+            background-color: #151821;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 198, 255, 0.2);
+        }
+
+        .team-member-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .team-member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member:hover .team-member-image img {
+            transform: scale(1.05);
+        }
+
+        .team-member-info {
+            padding: 30px;
+        }
+
+        .team-member-name {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .team-member-position {
+            color: #00c6ff;
+            font-size: 15px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .team-member-bio {
+            color: #b0b8d0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Values Section */
+        .values-section {
+            background-color: #0f1117;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .value-card {
+            background-color: #151821;
+            border-radius: 8px;
+            padding: 50px 40px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 198, 255, 0.2);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            font-size: 32px;
+        }
+
+        .value-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .value-description {
+            color: #b0b8d0;
+            line-height: 1.8;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background-color: #0a0b0f;
+            position: relative;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #00c6ff, #0072ff);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding: 30px;
+            background-color: #151821;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 40px;
+        }
+
+        .timeline-year {
+            position: absolute;
+            top: 30px;
+            width: 100px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: #0a0b0f;
+            font-weight: 700;
+            border-radius: 4px;
+            z-index: 2;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: -120px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            left: -120px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 40px;
+            width: 20px;
+            height: 20px;
+            background: #00c6ff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(0, 198, 255, 0.5);
+        }
+
+        .timeline-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .timeline-description {
+            color: #b0b8d0;
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(90deg, #0f1117 0%, #151821 100%);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ffffff, #b0b8d0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .cta-description {
+            font-size: 18px;
+            color: #b0b8d0;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #07080c;
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .footer-description {
+            color: #b0b8d0;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #151821;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: #00c6ff;
+            color: #0a0b0f;
+        }
+
+        .footer-heading {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #b0b8d0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00c6ff;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            color: #b0b8d0;
+        }
+
+        .contact-info i {
+            color: #00c6ff;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: #b0b8d0;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .page-hero-title {
+                font-size: 56px;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .values-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .page-hero-title {
+                font-size: 48px;
+            }
+            
+            .about-intro-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .about-intro-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+            }
+            
+            .timeline-content {
+                margin-left: 80px !important;
+                margin-right: 0 !important;
+            }
+            
+            .timeline-year {
+                left: 0 !important;
+                right: auto !important;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: #0a0b0f;
+                padding: 30px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+            
+            .nav-menu.active {
+                display: block;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .page-hero-title {
+                font-size: 40px;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .about-intro-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .page-hero-title {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">CineVibe</span>
+                <span class="logo-text">Media & Studios</span>
+            </a>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <a href="contact.html" class="cta-button">Start a Project</a>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero section">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="page-hero-subtitle">Our Story & Vision</span>
+                <h1 class="page-hero-title">Bringing Stories to Life Since 2012</h1>
+                <p class="page-hero-description">
+                    At CineVibe Media & Studios, we're more than just a production company. We're storytellers, 
+                    innovators, and visual artists dedicated to pushing the boundaries of cinematic excellence.
+                </p>
+                <a href="#timeline" class="cta-button">Explore Our Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Intro -->
+    <section class="about-intro section">
+        <div class="container">
+            <div class="about-intro-content">
+                <div class="about-intro-text">
+                    <h3>Where Creativity Meets Technology</h3>
+                    <p>
+                        Founded in Los Angeles in 2012, CineVibe Media & Studios began with a simple mission: 
+                        to create visually stunning content that captivates audiences and tells compelling stories. 
+                        What started as a small editing studio has grown into a full-service production house 
+                        specializing in video editing, 3D animation, and visual effects.
+                    </p>
+                    <p>
+                        Our team of award-winning artists and technicians combines cutting-edge technology with 
+                        artistic vision to deliver exceptional results for clients ranging from indie filmmakers 
+                        to Fortune 500 companies. We believe that every project, no matter the scale, deserves 
+                        the highest level of creative attention and technical precision.
+                    </p>
+                    
+                    <div class="about-intro-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">250+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Industry Awards</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-intro-image">
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="CineVibe Studio">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Meet The Visionaries</span>
+                <h2 class="section-title">Our Creative Leadership</h2>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Alex Morgan">
+                    </div>
+                    <div class="team-member-info">
+                        <h3 class="team-member-name">Alex Morgan</h3>
+                        <p class="team-member-position">Founder & Creative Director</p>
+                        <p class="team-member-bio">
+                            With over 15 years in the film industry, Alex leads our creative vision and ensures 
+                            every project meets our high standards of excellence.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Sophia Chen">
+                    </div>
+                    <div class="team-member-info">
+                        <h3 class="team-member-name">Sophia Chen</h3>
+                        <p class="team-member-position">Head of VFX</p>
+                        <p class="team-member-bio">
+                            Sophia brings a decade of visual effects experience from major studio productions, 
+                            specializing in CGI and motion capture.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Marcus Rodriguez">
+                    </div>
+                    <div class="team-member-info">
+                        <h3 class="team-member-name">Marcus Rodriguez</h3>
+                        <p class="team-member-position">Lead Editor</p>
+                        <p class="team-member-bio">
+                            Marcus has edited award-winning documentaries and feature films, with a keen eye for 
+                            pacing and emotional storytelling.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Jamie Wilson">
+                    </div>
+                    <div class="team-member-info">
+                        <h3 class="team-member-name">Jamie Wilson</h3>
+                        <p class="team-member-position">3D Animation Director</p>
+                        <p class="team-member-bio">
+                            Jamie's background in architectural visualization informs her unique approach to 3D 
+                            animation and immersive environments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Core Principles</span>
+                <h2 class="section-title">What Drives Us</h2>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="value-title">Visual Excellence</h3>
+                    <p class="value-description">
+                        We believe in the power of visual storytelling. Every frame, transition, and effect is 
+                        meticulously crafted to create immersive experiences that resonate with audiences.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-description">
+                        Staying ahead of technological trends allows us to push creative boundaries. We continuously 
+                        explore new techniques and tools to deliver groundbreaking visual solutions.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Collaboration</h3>
+                    <p class="value-description">
+                        Great work comes from great partnerships. We work closely with our clients throughout the 
+                        entire creative process, ensuring their vision is realized and exceeded.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section section" id="timeline">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Journey</span>
+                <h2 class="section-title">Milestones & Achievements</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">The Beginning</h3>
+                        <p class="timeline-description">
+                            CineVibe Media & Studios was founded in a small Los Angeles studio with a focus on 
+                            independent film editing and motion graphics for local businesses.
+                        </p>
+                    </div>
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">First Major Film Project</h3>
+                        <p class="timeline-description">
+                            We provided visual effects for an indie sci-fi feature that gained critical acclaim 
+                            at Sundance, establishing our reputation in the film community.
+                        </p>
+                    </div>
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Studio Expansion</h3>
+                        <p class="timeline-description">
+                            Moved to our current 10,000 sq ft facility and expanded our team to include specialized 
+                            3D animation and advanced VFX departments.
+                        </p>
+                    </div>
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Industry Recognition</h3>
+                        <p class="timeline-description">
+                            Won our first major industry awards for visual effects and animation, solidifying our 
+                            position as a leader in premium video production.
+                        </p>
+                    </div>
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Global Reach</h3>
+                        <p class="timeline-description">
+                            Expanded our client base to include international brands and streaming platforms, 
+                            while maintaining our commitment to creative excellence.
+                        </p>
+                    </div>
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+        <div class="container">
+            <div class="cta-container">
+                <h2 class="cta-title">Ready to Create With Us?</h2>
+                <p class="cta-description">
+                    Partner with the award-winning team at CineVibe Media & Studios to bring your vision to life 
+                    with professional video editing, 3D animation, and visual effects that captivate audiences.
+                </p>
+                <a href="contact.html" class="cta-button">Start Your Project Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span style="color: #00c6ff;">CineVibe</span> Media & Studios
+                    </div>
+                    <p class="footer-description">
+                        Transforming creative visions into cinematic reality through expert video editing, 
+                        3D animation, and visual effects.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-vimeo-v"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#editing">Video Editing</a></li>
+                        <li><a href="services.html#animation">3D Animation</a></li>
+                        <li><a href="services.html#vfx">Visual Effects</a></li>
+                        <li><a href="services.html">Motion Graphics</a></li>
+                        <li><a href="services.html">Color Grading</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Studio Boulevard<br>Los Angeles, CA 90210</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@cinevibemedia.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 CineVibe Media & Studios. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Team member hover animation
+        const teamMembers = document.querySelectorAll('.team-member');
+        teamMembers.forEach(member => {
+            member.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            member.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+
+        // Timeline animation on scroll
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply to timeline items
+        document.querySelectorAll('.timeline-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            item.style.transitionDelay = `${index * 0.2}s`;
+            observer.observe(item);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
