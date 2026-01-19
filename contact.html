@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | CineVibe Media & Studios | Premium Video Production</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background-color: #0a0b0f;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            transition: all 0.4s ease;
+        }
+
+        .header.scrolled {
+            background-color: rgba(10, 11, 15, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .logo-accent {
+            color: #00c6ff;
+            margin-right: 8px;
+        }
+
+        .logo-text {
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #00c6ff;
+        }
+
+        .nav-link.active {
+            color: #00c6ff;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        /* Hero Section - Matched exactly with index.html */
+        .hero {
+            height: 80vh;
+            min-height: 700px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(10, 11, 15, 0.9) 0%, rgba(10, 11, 15, 0.7) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero-subtitle {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00c6ff;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 68px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            background: linear-gradient(90deg, #ffffff, #b0b8d0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #b0b8d0;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .secondary-button {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            border-color: #00c6ff;
+            color: #00c6ff;
+        }
+
+        /* Contact Main */
+        .contact-main {
+            background-color: #0f1117;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00c6ff;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            padding: 50px;
+            background-color: #151821;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .info-description {
+            color: #b0b8d0;
+            margin-bottom: 40px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            margin-bottom: 50px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            border-radius: 8px;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+
+        .contact-text h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .contact-text p {
+            color: #b0b8d0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .business-hours {
+            margin-top: 40px;
+        }
+
+        .hours-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: #b0b8d0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hours-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        /* Contact Form */
+        .contact-form-container {
+            padding: 50px;
+            background-color: #151821;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .form-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .form-description {
+            color: #b0b8d0;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.double {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-input, .form-textarea, .form-select {
+            padding: 16px 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: #ffffff;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-color: #00c6ff;
+            background-color: rgba(0, 198, 255, 0.05);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            background-size: 16px;
+            padding-right: 50px;
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .checkbox-input {
+            margin-top: 5px;
+            width: 18px;
+            height: 18px;
+            accent-color: #00c6ff;
+        }
+
+        .checkbox-label {
+            font-size: 14px;
+            color: #b0b8d0;
+            line-height: 1.6;
+        }
+
+        .checkbox-label a {
+            color: #00c6ff;
+            text-decoration: underline;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+            align-self: flex-start;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            padding: 30px;
+            background-color: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .success-message.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-icon {
+            font-size: 48px;
+            color: #00ff88;
+            margin-bottom: 20px;
+        }
+
+        .success-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .success-text {
+            color: #b0b8d0;
+            font-size: 16px;
+        }
+
+        /* Map Section */
+        .map-section {
+            background-color: #0a0b0f;
+            padding: 0;
+            height: 500px;
+            position: relative;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10, 11, 15, 0.2), rgba(10, 11, 15, 0.8));
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .map-content {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            z-index: 2;
+            max-width: 400px;
+        }
+
+        .map-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .map-address {
+            color: #b0b8d0;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .map-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .map-button:hover {
+            background-color: #00c6ff;
+            border-color: #00c6ff;
+            color: #0a0b0f;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #0f1117;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: #151821;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(0, 198, 255, 0.05);
+        }
+
+        .faq-question h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .faq-icon {
+            color: #00c6ff;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer p {
+            color: #b0b8d0;
+            line-height: 1.8;
+            padding-bottom: 25px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Team Contacts */
+        .team-contacts {
+            background-color: #0a0b0f;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .team-member-contact {
+            background-color: #151821;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .team-member-contact:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 198, 255, 0.2);
+        }
+
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 25px;
+            border: 3px solid #00c6ff;
+        }
+
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-name {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .member-position {
+            color: #00c6ff;
+            font-size: 15px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .member-contact-info {
+            margin-top: 25px;
+        }
+
+        .member-contact-info p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #b0b8d0;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .member-contact-info i {
+            color: #00c6ff;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(90deg, #0f1117 0%, #151821 100%);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ffffff, #b0b8d0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .cta-description {
+            font-size: 18px;
+            color: #b0b8d0;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #07080c;
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .footer-description {
+            color: #b0b8d0;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #151821;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: #00c6ff;
+            color: #0a0b0f;
+        }
+
+        .footer-heading {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #b0b8d0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00c6ff;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            color: #b0b8d0;
+        }
+
+        .contact-info i {
+            color: #00c6ff;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: #b0b8d0;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .hero-title {
+                font-size: 56px;
+            }
+            
+            .contact-container {
+                gap: 50px;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .contact-info, .contact-form-container {
+                padding: 40px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: #0a0b0f;
+                padding: 30px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+            
+            .nav-menu.active {
+                display: block;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 40px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cta-button, .secondary-button {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .form-group.double {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .contact-info, .contact-form-container {
+                padding: 30px;
+            }
+            
+            .map-content {
+                left: 30px;
+                bottom: 30px;
+            }
+            
+            .map-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .contact-info, .contact-form-container {
+                padding: 25px 20px;
+            }
+            
+            .map-content {
+                left: 20px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">CineVibe</span>
+                <span class="logo-text">Media & Studios</span>
+            </a>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <a href="#contact-form" class="cta-button">Get a Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section - Exactly matching index.html -->
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://github.com/qwuitty-prog/CineVibe_Media_-_Studios/raw/main/assets/videos/hero.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-subtitle">Let's Create Together</span>
+                <h1 class="hero-title">Start Your Next Project</h1>
+                <p class="hero-description">
+                    Ready to bring your vision to life? Contact CineVibe Media & Studios today for a 
+                    consultation. Let's discuss how we can create something extraordinary together.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact-form" class="cta-button">Get Started</a>
+                    <a href="tel:+15551234567" class="secondary-button">
+                        <i class="fas fa-phone"></i> Call Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Main Section -->
+    <section class="contact-main section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Our Team</h2>
+            </div>
+            
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3 class="info-title">Let's Start a Conversation</h3>
+                    <p class="info-description">
+                        Have a project in mind? We'd love to hear about it. Fill out the form or 
+                        contact us directly using the information below. Our team typically responds 
+                        within 24 hours.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Studio</h4>
+                                <p>123 Studio Boulevard<br>Los Angeles, CA 90210<br>United States</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Call Us</h4>
+                                <p>+1 (555) 123-4567<br>Mon-Fri, 9:00 AM - 6:00 PM PST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Us</h4>
+                                <p>info@cinevibemedia.com<br>projects@cinevibemedia.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="business-hours">
+                        <h4 class="hours-title">Business Hours</h4>
+                        <ul class="hours-list">
+                            <li><span>Monday - Friday</span> <span>9:00 AM - 6:00 PM</span></li>
+                            <li><span>Saturday</span> <span>10:00 AM - 4:00 PM</span></li>
+                            <li><span>Sunday</span> <span>By Appointment Only</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-container" id="contact-form">
+                    <h3 class="form-title">Send Us a Message</h3>
+                    <p class="form-description">
+                        Fill out the form below and our team will get back to you as soon as possible.
+                    </p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group double">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company / Organization</label>
+                            <input type="text" id="company" name="company" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Interested In *</label>
+                            <select id="service" name="service" class="form-select" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="video-editing">Video Editing</option>
+                                <option value="3d-animation">3D Animation</option>
+                                <option value="visual-effects">Visual Effects</option>
+                                <option value="motion-graphics">Motion Graphics</option>
+                                <option value="color-grading">Color Grading</option>
+                                <option value="full-production">Full Video Production</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget" class="form-label">Project Budget Range</label>
+                            <select id="budget" name="budget" class="form-select">
+                                <option value="" selected>Select budget range</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-15k">$5,000 - $15,000</option>
+                                <option value="15k-50k">$15,000 - $50,000</option>
+                                <option value="50k-100k">$50,000 - $100,000</option>
+                                <option value="over-100k">Over $100,000</option>
+                                <option value="not-sure">Not sure / Need quote</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Project Details *</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project, timeline, and any specific requirements..." required></textarea>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="newsletter" name="newsletter" class="checkbox-input">
+                            <label for="newsletter" class="checkbox-label">
+                                I'd like to receive occasional updates, industry insights, and promotional offers from CineVibe Media & Studios.
+                            </label>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="privacy" name="privacy" class="checkbox-input" required>
+                            <label for="privacy" class="checkbox-label">
+                                I agree to the <a href="#">Privacy Policy</a> and understand that my information will be processed in accordance with it.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="cta-button submit-button">Send Message</button>
+                    </form>
+                    
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="success-title">Message Sent Successfully!</h3>
+                        <p class="success-text">
+                            Thank you for contacting CineVibe Media & Studios. We've received your message 
+                            and our team will get back to you within 24 hours.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <!-- Google Maps Embed -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.748150188226!2d-118.411179684785!3d34.06232432518714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379fd081ed1!2sBeverly%20Hills%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1623456789012!5m2!1sen!2s" 
+                width="100%" 
+                height="500" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-overlay"></div>
+            
+            <div class="map-content">
+                <h3 class="map-title">Visit Our Studio</h3>
+                <p class="map-address">
+                    123 Studio Boulevard<br>
+                    Los Angeles, CA 90210<br>
+                    United States
+                </p>
+                <a href="https://goo.gl/maps/abc123" target="_blank" class="map-button">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Common Questions</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your typical response time for inquiries?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            We typically respond to all inquiries within 24 hours during business days. For urgent 
+                            requests, you can call us directly at +1 (555) 123-4567. After submitting your project 
+                            details through our contact form, you'll receive an automated confirmation email, 
+                            followed by a personalized response from our team.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer free consultations?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Yes, we offer free 30-minute initial consultations for all new projects. During this 
+                            consultation, we'll discuss your project goals, timeline, budget, and creative vision. 
+                            This helps us understand your needs and provide an accurate quote. You can schedule a 
+                            consultation through our contact form or by calling our studio directly.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What information should I include in my project inquiry?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            For the most accurate quote, please include: Project description and goals, target 
+                            audience, project length/duration, preferred style or visual references, budget range, 
+                            timeline/deadline, and any existing assets or footage. The more detail you provide, 
+                            the better we can understand your needs and provide an accurate estimate.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you work with international clients?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Absolutely! We work with clients worldwide. We have experience coordinating projects 
+                            across different time zones and can accommodate various communication preferences 
+                            (video calls, email, project management tools). We accept payments in multiple 
+                            currencies and can deliver files through secure, high-speed transfer services 
+                            regardless of location.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your typical project timeline?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Project timelines vary based on complexity, scope, and current workload. Simple 
+                            editing projects can take 1-2 weeks, while complex animations or VFX-heavy projects 
+                            can take 8-12 weeks or more. During our consultation, we'll provide a detailed 
+                            timeline based on your specific project requirements and our current capacity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Contacts -->
+    <section class="team-contacts section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Direct Contacts</span>
+                <h2 class="section-title">Meet Our Team</h2>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member-contact">
+                    <div class="member-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Alex Morgan">
+                    </div>
+                    <h3 class="member-name">Alex Morgan</h3>
+                    <p class="member-position">Creative Director</p>
+                    <p>Leads creative vision and project strategy</p>
+                    
+                    <div class="member-contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4568</p>
+                        <p><i class="fas fa-envelope"></i> alex@cinevibemedia.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member-contact">
+                    <div class="member-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w-400&q=80" alt="Sophia Chen">
+                    </div>
+                    <h3 class="member-name">Sophia Chen</h3>
+                    <p class="member-position">Production Manager</p>
+                    <p>Manages project timelines and client communication</p>
+                    
+                    <div class="member-contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4569</p>
+                        <p><i class="fas fa-envelope"></i> sophia@cinevibemedia.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member-contact">
+                    <div class="member-avatar">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Marcus Rodriguez">
+                    </div>
+                    <h3 class="member-name">Marcus Rodriguez</h3>
+                    <p class="member-position">Sales Director</p>
+                    <p>Handles new business and partnership inquiries</p>
+                    
+                    <div class="member-contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4570</p>
+                        <p><i class="fas fa-envelope"></i> marcus@cinevibemedia.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+        <div class="container">
+            <div class="cta-container">
+                <h2 class="cta-title">Ready to Bring Your Vision to Life?</h2>
+                <p class="cta-description">
+                    Don't wait to start your next project. Contact CineVibe Media & Studios today and let's 
+                    create something extraordinary together. Our team is ready to help you achieve your 
+                    creative goals.
+                </p>
+                <div class="hero-buttons" style="justify-content: center;">
+                    <a href="#contact-form" class="cta-button">Start Your Project</a>
+                    <a href="tel:+15551234567" class="secondary-button">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span style="color: #00c6ff;">CineVibe</span> Media & Studios
+                    </div>
+                    <p class="footer-description">
+                        Transforming creative visions into cinematic reality through expert video editing, 
+                        3D animation, and visual effects.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-vimeo-v"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#editing">Video Editing</a></li>
+                        <li><a href="services.html#animation">3D Animation</a></li>
+                        <li><a href="services.html#vfx">Visual Effects</a></li>
+                        <li><a href="services.html">Motion Graphics</a></li>
+                        <li><a href="services.html">Color Grading</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Studio Boulevard<br>Los Angeles, CA 90210</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@cinevibemedia.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 CineVibe Media & Studios. All Rights Reserved. | <a href="#" style="color: #00c6ff;">Privacy Policy</a> | <a href="#" style="color: #00c6ff;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Video fallback for browsers that don't autoplay
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.hero-video');
+            video.play().catch(error => {
+                console.log('Hero video autoplay failed:', error);
+            });
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value.trim();
+            
+            if (!firstName || !lastName || !email || !service || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // In a real application, you would send the form data to a server here
+            // For demo purposes, we'll just show the success message
+            
+            // Show loading state
+            const submitButton = contactForm.querySelector('.submit-button');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                // Show success message
+                successMessage.classList.add('active');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Reset button
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Hide success message after 10 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('active');
+                }, 10000);
+            }, 1500);
+        });
+
+        // FAQ accordion functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', function() {
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Team contact cards animation
+        const teamCards = document.querySelectorAll('.team-member-contact');
+        
+        teamCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe team cards
+        teamCards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // Observe FAQ items
+        faqItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
+        });
+
+        // Phone number formatting
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 3 && value.length <= 6) {
+                    value = value.replace(/(\d{3})(\d+)/, '($1) $2');
+                } else if (value.length > 6) {
+                    value = value.replace(/(\d{3})(\d{3})(\d+)/, '($1) $2-$3');
+                }
+                e.target.value = value;
+            });
+        }
+
+        // Service selection enhancement
+        const serviceSelect = document.getElementById('service');
+        if (serviceSelect) {
+            serviceSelect.addEventListener('change', function() {
+                if (this.value === 'other') {
+                    // Create input for other service
+                    const otherInput = document.createElement('input');
+                    otherInput.type = 'text';
+                    otherInput.id = 'otherService';
+                    otherInput.name = 'otherService';
+                    otherInput.className = 'form-input';
+                    otherInput.placeholder = 'Please specify';
+                    otherInput.style.marginTop = '10px';
+                    
+                    // Check if other input already exists
+                    const existingOtherInput = document.getElementById('otherService');
+                    if (!existingOtherInput) {
+                        this.parentNode.appendChild(otherInput);
+                    }
+                } else {
+                    // Remove other input if it exists
+                    const otherInput = document.getElementById('otherService');
+                    if (otherInput) {
+                        otherInput.remove();
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
