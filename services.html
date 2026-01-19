@@ -150,6 +150,24 @@
             box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
         }
 
+        .secondary-button {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            border-color: #00c6ff;
+            color: #00c6ff;
+        }
+
         .mobile-toggle {
             display: none;
             font-size: 24px;
@@ -157,23 +175,41 @@
             color: #ffffff;
         }
 
-        /* Page Hero */
-        .page-hero {
-            height: 70vh;
-            min-height: 600px;
+        /* Hero Section - Exactly like index.html */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
             position: relative;
             display: flex;
             align-items: center;
             overflow: hidden;
-            background: linear-gradient(90deg, #0a0b0f 0%, #151821 100%);
         }
 
-        .page-hero-content {
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(10, 11, 15, 0.9) 0%, rgba(10, 11, 15, 0.7) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
             max-width: 800px;
-            z-index: 2;
         }
 
-        .page-hero-subtitle {
+        .hero-subtitle {
             display: inline-block;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -184,7 +220,7 @@
             margin-bottom: 20px;
         }
 
-        .page-hero-title {
+        .hero-title {
             font-size: 68px;
             font-weight: 800;
             margin-bottom: 30px;
@@ -195,14 +231,19 @@
             color: transparent;
         }
 
-        .page-hero-description {
+        .hero-description {
             font-size: 18px;
             color: #b0b8d0;
             margin-bottom: 40px;
             max-width: 600px;
         }
 
-        /* Services Overview */
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Services Overview - Matched to index.html service cards style */
         .services-overview {
             background-color: #0f1117;
             position: relative;
@@ -258,6 +299,11 @@
             display: flex;
             align-items: flex-start;
             margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(5px);
         }
 
         .feature-icon {
@@ -303,7 +349,7 @@
             transform: scale(1.03);
         }
 
-        /* Detailed Services */
+        /* Detailed Services - Using index.html service card grid structure */
         .detailed-services {
             background-color: #0a0b0f;
         }
@@ -423,7 +469,7 @@
             font-weight: bold;
         }
 
-        /* Process Section */
+        /* Process Section - Matched to index.html values section */
         .process-section {
             background-color: #0f1117;
             position: relative;
@@ -480,7 +526,7 @@
             line-height: 1.8;
         }
 
-        /* Pricing Section */
+        /* Pricing Section - Using index.html service card structure */
         .pricing-section {
             background-color: #0a0b0f;
         }
@@ -504,6 +550,10 @@
             cursor: pointer;
             position: relative;
             transition: color 0.3s ease;
+        }
+
+        .pricing-tab:hover {
+            color: #00c6ff;
         }
 
         .pricing-tab.active {
@@ -603,7 +653,7 @@
             border-bottom: none;
         }
 
-        /* FAQ Section */
+        /* FAQ Section - Using index.html service card styling */
         .faq-section {
             background-color: #0f1117;
         }
@@ -619,6 +669,11 @@
             margin-bottom: 20px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(0, 198, 255, 0.2);
         }
 
         .faq-question {
@@ -667,7 +722,7 @@
             transform: rotate(45deg);
         }
 
-        /* CTA Section */
+        /* CTA Section - Exactly like index.html */
         .cta-section {
             background: linear-gradient(90deg, #0f1117 0%, #151821 100%);
             text-align: center;
@@ -697,7 +752,7 @@
             margin-right: auto;
         }
 
-        /* Footer */
+        /* Footer - Exactly like index.html */
         .footer {
             background-color: #07080c;
             padding: 80px 0 40px;
@@ -784,13 +839,13 @@
             font-size: 14px;
         }
 
-        /* Responsive Styles */
+        /* Responsive Styles - Matched to index.html */
         @media (max-width: 1200px) {
             .container {
                 padding: 0 30px;
             }
             
-            .page-hero-title {
+            .hero-title {
                 font-size: 56px;
             }
             
@@ -805,7 +860,7 @@
         }
 
         @media (max-width: 992px) {
-            .page-hero-title {
+            .hero-title {
                 font-size: 48px;
             }
             
@@ -876,8 +931,18 @@
                 display: block;
             }
             
-            .page-hero-title {
+            .hero-title {
                 font-size: 40px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cta-button, .secondary-button {
+                width: 100%;
+                text-align: center;
             }
             
             .section {
@@ -914,7 +979,7 @@
                 padding: 0 20px;
             }
             
-            .page-hero-title {
+            .hero-title {
                 font-size: 36px;
             }
             
@@ -941,7 +1006,7 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header - Exactly like index.html -->
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -967,18 +1032,27 @@
         </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero section">
+    <!-- Hero Section - Exactly like index.html -->
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://github.com/qwuitty-prog/CineVibe_Media_-_Studios/raw/main/assets/videos/hero.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        
         <div class="container">
-            <div class="page-hero-content">
-                <span class="page-hero-subtitle">Professional Video Production</span>
-                <h1 class="page-hero-title">Comprehensive Visual Solutions</h1>
-                <p class="page-hero-description">
+            <div class="hero-content">
+                <span class="hero-subtitle">Professional Video Production</span>
+                <h1 class="hero-title">Comprehensive Visual Solutions</h1>
+                <p class="hero-description">
                     From concept to final delivery, CineVibe Media & Studios offers a complete suite of video 
                     production services designed to bring your creative vision to life with cinematic quality 
                     and technical excellence.
                 </p>
-                <a href="#pricing" class="cta-button">View Pricing Plans</a>
+                <div class="hero-buttons">
+                    <a href="#pricing" class="cta-button">View Pricing Plans</a>
+                    <a href="#services" class="secondary-button">Explore Services</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1432,7 +1506,7 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA Section - Exactly like index.html -->
     <section class="cta-section section">
         <div class="container">
             <div class="cta-container">
@@ -1446,7 +1520,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - Exactly like index.html -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -1522,7 +1596,7 @@
     </footer>
 
     <script>
-        // Header scroll effect
+        // Header scroll effect - Exactly like index.html
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
             if (window.scrollY > 50) {
@@ -1532,7 +1606,7 @@
             }
         });
 
-        // Mobile menu toggle
+        // Mobile menu toggle - Exactly like index.html
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
         
@@ -1540,11 +1614,19 @@
             navMenu.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking on a link
+        // Close mobile menu when clicking on a link - Exactly like index.html
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
+            });
+        });
+
+        // Video fallback for browsers that don't autoplay - Exactly like index.html
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.hero-video');
+            video.play().catch(error => {
+                console.log('Video autoplay failed:', error);
             });
         });
 
@@ -1622,7 +1704,7 @@
             });
         });
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling for anchor links - Exactly like index.html/previous pages
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 if(this.getAttribute('href') === '#') return;
@@ -1679,6 +1761,15 @@
 
         // Apply to pricing cards
         document.querySelectorAll('.pricing-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        // Apply to service cards
+        document.querySelectorAll('.service-detail-card').forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
