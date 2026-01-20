@@ -9,11 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
+        /* ===== BASE STYLES - EXACTLY LIKE INDEX.HTML ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -39,6 +43,12 @@
             list-style: none;
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .container {
             width: 100%;
             max-width: 1400px;
@@ -50,7 +60,49 @@
             padding: 100px 0;
         }
 
-        /* Header Styles */
+        /* ===== BUTTONS - EXACTLY LIKE INDEX.HTML ===== */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
+        }
+
+        .secondary-button {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .secondary-button:hover {
+            border-color: #00c6ff;
+            color: #00c6ff;
+        }
+
+        /* ===== HEADER & NAVIGATION - EXACTLY LIKE INDEX.HTML ===== */
         .header {
             position: fixed;
             top: 0;
@@ -59,6 +111,7 @@
             z-index: 1000;
             padding: 25px 0;
             transition: all 0.4s ease;
+            background-color: transparent;
         }
 
         .header.scrolled {
@@ -80,6 +133,7 @@
             font-size: 28px;
             font-weight: 800;
             color: #ffffff;
+            z-index: 1001;
         }
 
         .logo-accent {
@@ -91,9 +145,11 @@
             letter-spacing: 1px;
         }
 
+        /* Desktop Navigation */
         .nav-menu {
             display: flex;
             align-items: center;
+            gap: 40px;
         }
 
         .nav-list {
@@ -129,35 +185,19 @@
             background: linear-gradient(90deg, #00c6ff, #0072ff);
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 15px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
-        }
-
+        /* Mobile Navigation Toggle */
         .mobile-toggle {
             display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
             font-size: 24px;
             cursor: pointer;
-            color: #ffffff;
+            padding: 5px;
+            z-index: 1001;
         }
 
-        /* Hero Section - Matched exactly with index.html */
+        /* ===== HERO SECTION - EXACTLY LIKE INDEX.HTML ===== */
         .hero {
             height: 100vh;
             min-height: 800px;
@@ -225,28 +265,9 @@
             gap: 20px;
         }
 
-        .secondary-button {
-            display: inline-block;
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 15px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .secondary-button:hover {
-            border-color: #00c6ff;
-            color: #00c6ff;
-        }
-
-        /* Portfolio Intro */
+        /* ===== PORTFOLIO INTRO - MATCHING ABOUT.HTML STYLE ===== */
         .portfolio-intro {
             background-color: #0f1117;
-            position: relative;
         }
 
         .section-header {
@@ -304,6 +325,12 @@
             background-color: rgba(21, 24, 33, 0.5);
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 198, 255, 0.2);
         }
 
         .stat-number {
@@ -339,10 +366,10 @@
             transform: scale(1.03);
         }
 
-        /* Portfolio Filter */
+        /* ===== PORTFOLIO FILTER ===== */
         .portfolio-filter {
             background-color: #0a0b0f;
-            padding: 50px 0 0;
+            padding: 0 0 50px;
         }
 
         .filter-container {
@@ -382,10 +409,9 @@
             border-color: transparent;
         }
 
-        /* Portfolio Grid */
+        /* ===== PORTFOLIO GRID - MATCHING INDEX.HTML SHOWCASE ===== */
         .portfolio-grid-section {
             background-color: #0a0b0f;
-            padding-top: 0;
         }
 
         .portfolio-grid {
@@ -395,18 +421,16 @@
         }
 
         .portfolio-item {
-            position: relative;
             border-radius: 8px;
             overflow: hidden;
-            height: 500px;
-            cursor: pointer;
-            transition: all 0.4s ease;
+            position: relative;
+            height: 400px;
         }
 
         .portfolio-item.featured {
             grid-column: span 2;
             grid-row: span 2;
-            height: 1030px;
+            height: 830px;
         }
 
         .portfolio-image {
@@ -426,15 +450,7 @@
             left: 0;
             width: 100%;
             padding: 40px;
-            background: linear-gradient(transparent, rgba(10, 11, 15, 0.95));
-            transform: translateY(10px);
-            opacity: 0;
-            transition: all 0.4s ease;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            transform: translateY(0);
-            opacity: 1;
+            background: linear-gradient(transparent, rgba(10, 11, 15, 0.9));
         }
 
         .portfolio-category {
@@ -452,7 +468,7 @@
             font-size: 24px;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .portfolio-description {
@@ -481,10 +497,9 @@
             transform: translateX(5px);
         }
 
-        /* Video Showcase */
+        /* ===== VIDEO SHOWCASE ===== */
         .video-showcase {
             background-color: #0f1117;
-            position: relative;
         }
 
         .video-container {
@@ -540,7 +555,7 @@
             transform: scale(1.1);
         }
 
-        /* Client Testimonials */
+        /* ===== TESTIMONIALS - MATCHING ABOUT.HTML STYLE ===== */
         .testimonials-section {
             background-color: #0a0b0f;
         }
@@ -649,7 +664,7 @@
             color: #0a0b0f;
         }
 
-        /* Awards Section */
+        /* ===== AWARDS SECTION - MATCHING ABOUT.HTML VALUES ===== */
         .awards-section {
             background-color: #0f1117;
         }
@@ -693,14 +708,14 @@
             letter-spacing: 1px;
         }
 
-        /* Clients Section */
+        /* ===== CLIENTS SECTION ===== */
         .clients-section {
             background-color: #0a0b0f;
         }
 
         .clients-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             align-items: center;
         }
@@ -727,7 +742,7 @@
             object-fit: contain;
         }
 
-        /* CTA Section */
+        /* ===== CTA SECTION - EXACTLY LIKE INDEX.HTML ===== */
         .cta-section {
             background: linear-gradient(90deg, #0f1117 0%, #151821 100%);
             text-align: center;
@@ -757,7 +772,7 @@
             margin-right: auto;
         }
 
-        /* Footer */
+        /* ===== FOOTER - EXACTLY LIKE INDEX.HTML ===== */
         .footer {
             background-color: #07080c;
             padding: 80px 0 40px;
@@ -844,7 +859,7 @@
             font-size: 14px;
         }
 
-        /* Portfolio Modal */
+        /* ===== PORTFOLIO MODAL ===== */
         .portfolio-modal {
             position: fixed;
             top: 0;
@@ -958,7 +973,9 @@
             font-size: 16px;
         }
 
-        /* Responsive Styles */
+        /* ===== RESPONSIVE STYLES - MATCHING INDEX.HTML ===== */
+
+        /* Large Desktops (1200px and below) */
         @media (max-width: 1200px) {
             .container {
                 padding: 0 30px;
@@ -970,6 +987,7 @@
             
             .portfolio-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
             
             .portfolio-item.featured {
@@ -983,13 +1001,18 @@
             }
             
             .clients-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
+        /* Tablets and Small Desktops (992px and below) */
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 48px;
+            }
+            
+            .section-title {
+                font-size: 36px;
             }
             
             .intro-content {
@@ -1027,85 +1050,107 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 40px;
             }
+            
+            .cta-title {
+                font-size: 42px;
+            }
         }
 
+        /* Mobile Devices (768px and below) - EXACTLY LIKE INDEX.HTML */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            /* Mobile Navigation - EXACTLY LIKE INDEX.HTML */
+            .mobile-toggle {
+                display: block;
+            }
+            
             .nav-menu {
-                display: none;
                 position: fixed;
-                top: 80px;
-                left: 0;
+                top: 0;
+                left: -100%;
                 width: 100%;
-                background-color: #0a0b0f;
-                padding: 30px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                height: 100vh;
+                background-color: rgba(10, 11, 15, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+                z-index: 999;
+                gap: 0;
             }
             
             .nav-menu.active {
-                display: block;
+                left: 0;
             }
             
             .nav-list {
                 flex-direction: column;
-                gap: 20px;
+                gap: 30px;
+                margin-bottom: 40px;
             }
             
-            .mobile-toggle {
-                display: block;
+            .nav-link {
+                font-size: 18px;
+                padding: 10px 0;
+            }
+            
+            /* Hero section mobile */
+            .hero {
+                min-height: 700px;
             }
             
             .hero-title {
                 font-size: 40px;
             }
             
+            .hero-description {
+                font-size: 16px;
+            }
+            
             .hero-buttons {
                 flex-direction: column;
-                width: 100%;
+                gap: 15px;
             }
             
             .cta-button, .secondary-button {
                 width: 100%;
-                text-align: center;
+                padding: 18px 24px;
+                font-size: 16px;
             }
             
-            .section {
-                padding: 80px 0;
-            }
-            
+            /* Intro stats mobile */
             .intro-stats {
                 grid-template-columns: 1fr;
             }
             
+            /* Portfolio grid mobile */
+            .portfolio-item,
+            .portfolio-item.featured {
+                height: 350px;
+            }
+            
+            .portfolio-overlay {
+                padding: 25px;
+            }
+            
+            .portfolio-title {
+                font-size: 20px;
+            }
+            
+            /* Video player mobile */
             .video-player {
                 height: 300px;
             }
             
-            .modal-info {
-                grid-template-columns: 1fr;
-            }
-            
-            .clients-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 576px) {
-            .container {
-                padding: 0 20px;
-            }
-            
-            .hero-title {
-                font-size: 36px;
-            }
-            
-            .section-title {
-                font-size: 32px;
-            }
-            
-            .portfolio-item {
-                height: 400px;
-            }
-            
+            /* Testimonials mobile */
             .testimonial-slide {
                 padding: 30px 20px;
             }
@@ -1120,6 +1165,11 @@
                 text-align: center;
             }
             
+            /* Modal mobile */
+            .modal-info {
+                grid-template-columns: 1fr;
+            }
+            
             .modal-details {
                 padding: 30px 20px;
             }
@@ -1128,14 +1178,154 @@
                 font-size: 28px;
             }
             
+            /* Clients grid mobile */
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* CTA mobile */
+            .cta-title {
+                font-size: 36px;
+            }
+            
+            .cta-description {
+                font-size: 16px;
+            }
+            
+            /* Footer mobile */
+            .footer {
+                padding: 60px 0 30px;
+            }
+            
             .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
+            
+            .footer-bottom {
+                padding-top: 30px;
+            }
+            
+            /* Logo text hide on mobile - EXACTLY LIKE INDEX.HTML */
+            .logo-text {
+                display: none;
+            }
+        }
+
+        /* Small Mobile Devices (576px and below) */
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .section-header {
+                margin-bottom: 50px;
+            }
+            
+            .hero-subtitle,
+            .section-subtitle {
+                font-size: 14px;
+            }
+            
+            .stat-item {
+                padding: 25px 15px;
+            }
+            
+            .stat-number {
+                font-size: 36px;
+            }
+            
+            .portfolio-item,
+            .portfolio-item.featured {
+                height: 300px;
+            }
+            
+            .cta-title {
+                font-size: 32px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Very Small Mobile Devices (375px and below) */
+        @media (max-width: 375px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .intro-text h3 {
+                font-size: 26px;
+            }
+            
+            .award-item {
+                padding: 30px 20px;
+            }
+            
+            .cta-title {
+                font-size: 28px;
+            }
+        }
+
+        /* Fix for iOS Safari 100vh issue - EXACTLY LIKE INDEX.HTML */
+        @supports (-webkit-touch-callout: none) {
+            .hero {
+                height: -webkit-fill-available;
+                min-height: -webkit-fill-available;
+            }
+        }
+
+        /* Prevent horizontal scrolling - EXACTLY LIKE INDEX.HTML */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Improve touch targets on mobile - EXACTLY LIKE INDEX.HTML */
+        @media (max-width: 768px) {
+            .cta-button,
+            .secondary-button,
+            .nav-link,
+            .portfolio-link,
+            .filter-btn,
+            .social-link,
+            .footer-links a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .mobile-toggle {
+                min-width: 44px;
+                min-height: 44px;
+            }
+            
+            .portfolio-item {
+                align-items: stretch;
+            }
+        }
+
+        /* Performance optimizations - EXACTLY LIKE INDEX.HTML */
+        .hero-video,
+        .portfolio-image,
+        .intro-image img,
+        .modal-image {
+            will-change: transform;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header & Navigation - EXACTLY LIKE INDEX.HTML -->
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -1143,9 +1333,9 @@
                 <span class="logo-text">Media & Studios</span>
             </a>
             
-            <div class="mobile-toggle" id="mobileToggle">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
             
             <nav class="nav-menu" id="navMenu">
                 <ul class="nav-list">
@@ -1155,13 +1345,12 @@
                     <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
+                <a href="contact.html" class="cta-button">Start a Project</a>
             </nav>
-            
-            <a href="contact.html" class="cta-button">Start a Project</a>
         </div>
     </header>
 
-    <!-- Hero Section - Exactly matching index.html -->
+    <!-- Hero Section - EXACTLY LIKE INDEX.HTML -->
     <section class="hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="https://github.com/qwuitty-prog/CineVibe_Media_-_Studios/raw/main/assets/videos/hero.mp4" type="video/mp4">
@@ -1219,11 +1408,13 @@
                 </div>
                 
                 <div class="intro-image">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Portfolio Showcase">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Portfolio Showcase" loading="lazy">
                 </div>
             </div>
         </div>
-    </section><!-- Portfolio Filter -->
+    </section>
+
+    <!-- Portfolio Filter -->
     <section class="portfolio-filter section" id="portfolio">
         <div class="container filter-container">
             <div class="section-header">
@@ -1248,13 +1439,13 @@
             <div class="portfolio-grid">
                 <!-- Featured Project -->
                 <div class="portfolio-item featured" data-category="film vfx">
-                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Nexus Horizon" class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Nexus Horizon" class="portfolio-image" loading="lazy">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Film & VFX</span>
                         <h3 class="portfolio-title">"Nexus Horizon" Sci-Fi Feature</h3>
                         <p class="portfolio-description">
                             Award-winning sci-fi film featuring 200+ VFX shots, full 3D environments, 
-                            and groundbreaking creature effects. Delivered for global theatrical release.
+                            and groundbreaking creature effects.
                         </p>
                         <a href="#" class="portfolio-link view-project" data-project="nexus">
                             View Case Study <i class="fas fa-arrow-right"></i>
@@ -1264,13 +1455,13 @@
                 
                 <!-- Commercial Project -->
                 <div class="portfolio-item" data-category="commercial animation">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Aurora Tech" class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Aurora Tech" class="portfolio-image" loading="lazy">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Commercial & Animation</span>
                         <h3 class="portfolio-title">Aurora Tech Brand Campaign</h3>
                         <p class="portfolio-description">
                             Complete brand launch campaign featuring 3D product animations, motion graphics, 
-                            and multi-format video content for global tech company.
+                            and multi-format video content.
                         </p>
                         <a href="#" class="portfolio-link view-project" data-project="aurora">
                             View Project <i class="fas fa-arrow-right"></i>
@@ -1280,13 +1471,13 @@
                 
                 <!-- Music Video -->
                 <div class="portfolio-item" data-category="music vfx">
-                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Neon Dreams" class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Neon Dreams" class="portfolio-image" loading="lazy">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Music Video & VFX</span>
                         <h3 class="portfolio-title">"Neon Dreams" Music Visuals</h3>
                         <p class="portfolio-description">
                             Visual effects heavy music video featuring surreal environments, particle effects, 
-                            and real-time CGI integration for chart-topping electronic artist.
+                            and real-time CGI integration.
                         </p>
                         <a href="#" class="portfolio-link view-project" data-project="neon">
                             View Project <i class="fas fa-arrow-right"></i>
@@ -1296,13 +1487,13 @@
                 
                 <!-- Documentary -->
                 <div class="portfolio-item" data-category="film">
-                    <img src="https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ocean Depths" class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ocean Depths" class="portfolio-image" loading="lazy">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Documentary Film</span>
                         <h3 class="portfolio-title">"Ocean Depths" Documentary</h3>
                         <p class="portfolio-description">
                             Feature-length nature documentary with underwater cinematography, 3D marine life 
-                            animations, and immersive sound design for streaming platform.
+                            animations, and immersive sound design.
                         </p>
                         <a href="#" class="portfolio-link view-project" data-project="ocean">
                             View Project <i class="fas fa-arrow-right"></i>
@@ -1312,13 +1503,13 @@
                 
                 <!-- Corporate Video -->
                 <div class="portfolio-item" data-category="commercial">
-                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Veridian Corporate" class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Veridian Corporate" class="portfolio-image" loading="lazy">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Corporate Video</span>
                         <h3 class="portfolio-title">Veridian Annual Report Video</h3>
                         <p class="portfolio-description">
                             Animated corporate report video combining data visualization, executive interviews, 
-                            and motion graphics for Fortune 500 company's shareholder presentation.
+                            and motion graphics.
                         </p>
                         <a href="#" class="portfolio-link view-project" data-project="veridian">
                             View Project <i class="fas fa-arrow-right"></i>
@@ -1328,13 +1519,13 @@
                 
                 <!-- Game Trailer -->
                 <div class="portfolio-item" data-category="animation vfx">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cyber Realms" class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cyber Realms" class="portfolio-image" loading="lazy">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Game Trailer & Animation</span>
                         <h3 class="portfolio-title">"Cyber Realms" Game Trailer</h3>
                         <p class="portfolio-description">
                             Cinematic game trailer featuring real-time rendered 3D animations, character 
-                            close-ups, and explosive visual effects for AAA game studio launch.
+                            close-ups, and explosive visual effects.
                         </p>
                         <a href="#" class="portfolio-link view-project" data-project="cyber">
                             View Project <i class="fas fa-arrow-right"></i>
@@ -1354,7 +1545,7 @@
             </div>
             
             <div class="video-container">
-                <video class="video-player" id="featuredVideo" poster="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+                <video class="video-player" id="featuredVideo" poster="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" loading="lazy">
                     <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-road-in-a-forest-41574-large.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -1388,7 +1579,7 @@
                     </div>
                     <div class="client-info">
                         <div class="client-avatar">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Alex Johnson">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Alex Johnson" loading="lazy">
                         </div>
                         <div class="client-details">
                             <h4>Alex Johnson</h4>
@@ -1405,7 +1596,7 @@
                     </div>
                     <div class="client-info">
                         <div class="client-avatar">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Sarah Chen">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Sarah Chen" loading="lazy">
                         </div>
                         <div class="client-details">
                             <h4>Sarah Chen</h4>
@@ -1422,7 +1613,7 @@
                     </div>
                     <div class="client-info">
                         <div class="client-avatar">
-                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Jamie Wilson">
+                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Jamie Wilson" loading="lazy">
                         </div>
                         <div class="client-details">
                             <h4>Jamie Wilson</h4>
@@ -1497,25 +1688,19 @@
             
             <div class="clients-grid">
                 <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon" loading="lazy">
                 </div>
                 <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="Google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="Google" loading="lazy">
                 </div>
                 <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/488px-Apple_logo_black.svg.png" alt="Apple">
-                </div>
-                <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" alt="Netflix">
-                </div>
-                <div class="client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="Samsung">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" alt="Netflix" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA Section - EXACTLY LIKE INDEX.HTML -->
     <section class="cta-section section">
         <div class="container">
             <div class="cta-container">
@@ -1529,7 +1714,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - EXACTLY LIKE INDEX.HTML -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -1610,7 +1795,7 @@
             <div class="modal-close" id="modalClose">
                 <i class="fas fa-times"></i>
             </div>
-            <img src="" alt="Project Image" class="modal-image" id="modalImage">
+            <img src="" alt="Project Image" class="modal-image" id="modalImage" loading="lazy">
             <div class="modal-details">
                 <span class="modal-category" id="modalCategory">Film & VFX</span>
                 <h2 class="modal-title" id="modalTitle">Project Title</h2>
@@ -1640,7 +1825,7 @@
     </div>
 
     <script>
-        // Header scroll effect
+        // Header scroll effect - EXACTLY like index.html
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
             if (window.scrollY > 50) {
@@ -1650,27 +1835,113 @@
             }
         });
 
-        // Mobile menu toggle
+        // Mobile menu toggle - EXACTLY like index.html
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
+        const body = document.body;
         
-        mobileToggle.addEventListener('click', function() {
+        function toggleMobileMenu() {
             navMenu.classList.toggle('active');
-        });
+            body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        }
+        
+        mobileToggle.addEventListener('click', toggleMobileMenu);
 
-        // Close mobile menu when clicking on a link
+        // Close mobile menu when clicking on a link - EXACTLY like index.html
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    body.style.overflow = '';
+                }
             });
         });
 
-        // Video fallback for browsers that don't autoplay
+        // Close mobile menu when clicking outside - EXACTLY like index.html
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.nav-menu') && 
+                !event.target.closest('.mobile-toggle') && 
+                navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        // Close mobile menu with Escape key - EXACTLY like index.html
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        // Video fallback for browsers that don't autoplay - EXACTLY like index.html
         document.addEventListener('DOMContentLoaded', function() {
             const video = document.querySelector('.hero-video');
-            video.play().catch(error => {
-                console.log('Hero video autoplay failed:', error);
+            if (video) {
+                video.play().catch(error => {
+                    console.log('Video autoplay failed:', error);
+                });
+            }
+        });
+
+        // Close mobile menu on window resize (if resizing to desktop) - EXACTLY like index.html
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        // Smooth scrolling for anchor links - EXACTLY like index.html
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        body.style.overflow = '';
+                    }
+                }
+            });
+        });
+
+        // Add loading="lazy" to all images - EXACTLY like index.html
+        document.querySelectorAll('img').forEach(img => {
+            if (!img.hasAttribute('loading')) {
+                img.setAttribute('loading', 'lazy');
+            }
+        });
+
+        // Prevent zoom on double tap for mobile - EXACTLY like index.html
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, { passive: false });
+
+        // Improve button feedback on mobile - EXACTLY like index.html
+        document.querySelectorAll('.cta-button, .secondary-button, .filter-btn').forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            button.addEventListener('touchend', function() {
+                this.style.transform = '';
             });
         });
 
@@ -1872,28 +2143,8 @@
                 document.body.style.overflow = 'auto';
             }
         });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href') === '#') return;
-                
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
 
-        // Portfolio item animation on scroll
+        // Portfolio item animation on scroll - SIMILAR to about.html
         const observerOptions = {
             threshold: 0.1
         };
@@ -1923,6 +2174,51 @@
             item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             item.style.transitionDelay = `${index * 0.1}s`;
             observer.observe(item);
+        });
+
+        // Stat counter animation - SIMILAR to about.html
+        const statItems = document.querySelectorAll('.stat-item');
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const text = statNumber.textContent;
+                    const finalValue = parseInt(text);
+                    const suffix = text.replace(/[0-9]/g, '');
+                    let startValue = 0;
+                    const duration = 2000;
+                    const increment = finalValue / (duration / 16);
+                    
+                    const counter = () => {
+                        startValue += increment;
+                        if (startValue < finalValue) {
+                            statNumber.textContent = Math.floor(startValue) + suffix;
+                            setTimeout(counter, 16);
+                        } else {
+                            statNumber.textContent = finalValue + suffix;
+                        }
+                    };
+                    
+                    counter();
+                    statObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statItems.forEach(item => {
+            statObserver.observe(item);
+        });
+
+        // Team member hover z-index fix - SIMILAR to about.html
+        const portfolioItemsInteractive = document.querySelectorAll('.portfolio-item');
+        portfolioItemsInteractive.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
         });
     </script>
 </body>
