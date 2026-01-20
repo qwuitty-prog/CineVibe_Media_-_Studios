@@ -9,11 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
+        /* ===== BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -39,6 +43,12 @@
             list-style: none;
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .container {
             width: 100%;
             max-width: 1400px;
@@ -50,7 +60,49 @@
             padding: 100px 0;
         }
 
-        /* Header Styles */
+        /* ===== BUTTONS ===== */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
+        }
+
+        .secondary-button {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .secondary-button:hover {
+            border-color: #00c6ff;
+            color: #00c6ff;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
         .header {
             position: fixed;
             top: 0;
@@ -59,6 +111,7 @@
             z-index: 1000;
             padding: 25px 0;
             transition: all 0.4s ease;
+            background-color: transparent;
         }
 
         .header.scrolled {
@@ -80,6 +133,7 @@
             font-size: 28px;
             font-weight: 800;
             color: #ffffff;
+            z-index: 1001;
         }
 
         .logo-accent {
@@ -91,9 +145,11 @@
             letter-spacing: 1px;
         }
 
+        /* Desktop Navigation */
         .nav-menu {
             display: flex;
             align-items: center;
+            gap: 40px;
         }
 
         .nav-list {
@@ -129,53 +185,19 @@
             background: linear-gradient(90deg, #00c6ff, #0072ff);
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 15px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
-        }
-
-        .secondary-button {
-            display: inline-block;
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 15px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .secondary-button:hover {
-            border-color: #00c6ff;
-            color: #00c6ff;
-        }
-
+        /* Mobile Navigation Toggle */
         .mobile-toggle {
             display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
             font-size: 24px;
             cursor: pointer;
-            color: #ffffff;
+            padding: 5px;
+            z-index: 1001;
         }
 
-        /* Hero Section - Using index.html hero structure but with about content */
+        /* ===== HERO SECTION ===== */
         .hero {
             height: 100vh;
             min-height: 800px;
@@ -243,10 +265,9 @@
             gap: 20px;
         }
 
-        /* About Intro - Matched to index.html service cards style */
+        /* ===== ABOUT INTRO ===== */
         .about-intro {
             background-color: #0f1117;
-            position: relative;
         }
 
         .section-header {
@@ -345,7 +366,7 @@
             transform: scale(1.03);
         }
 
-        /* Team Section - Using index.html service card grid structure */
+        /* ===== TEAM SECTION ===== */
         .team-section {
             background-color: #0a0b0f;
         }
@@ -411,7 +432,7 @@
             line-height: 1.6;
         }
 
-        /* Values Section - Matched to index.html services preview */
+        /* ===== VALUES SECTION ===== */
         .values-section {
             background-color: #0f1117;
         }
@@ -438,15 +459,15 @@
         }
 
         .value-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #00c6ff, #0072ff);
-            border-radius: 50%;
+            border-radius: 8px;
             margin: 0 auto 30px;
-            font-size: 32px;
+            font-size: 28px;
         }
 
         .value-title {
@@ -460,7 +481,7 @@
             line-height: 1.8;
         }
 
-        /* Timeline Section - Adjusted to match index.html showcase styling */
+        /* ===== TIMELINE SECTION ===== */
         .timeline-section {
             background-color: #0a0b0f;
             position: relative;
@@ -468,8 +489,10 @@
 
         .timeline {
             position: relative;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
+            padding-left: 50px;
+            padding-right: 50px;
         }
 
         .timeline::before {
@@ -504,6 +527,8 @@
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
         }
 
         .timeline-content:hover {
@@ -521,7 +546,7 @@
         .timeline-year {
             position: absolute;
             top: 30px;
-            width: 100px;
+            width: 120px;
             height: 50px;
             display: flex;
             align-items: center;
@@ -531,14 +556,16 @@
             font-weight: 700;
             border-radius: 4px;
             z-index: 2;
+            font-size: 20px;
+            padding: 0 15px;
         }
 
         .timeline-item:nth-child(odd) .timeline-year {
-            right: -120px;
+            right: -130px;
         }
 
         .timeline-item:nth-child(even) .timeline-year {
-            left: -120px;
+            left: -130px;
         }
 
         .timeline-dot {
@@ -565,7 +592,7 @@
             line-height: 1.8;
         }
 
-        /* CTA Section - Exactly like index.html */
+        /* ===== CTA SECTION ===== */
         .cta-section {
             background: linear-gradient(90deg, #0f1117 0%, #151821 100%);
             text-align: center;
@@ -595,7 +622,7 @@
             margin-right: auto;
         }
 
-        /* Footer - Exactly like index.html */
+        /* ===== FOOTER ===== */
         .footer {
             background-color: #07080c;
             padding: 80px 0 40px;
@@ -682,7 +709,9 @@
             font-size: 14px;
         }
 
-        /* Responsive Styles - Matched to index.html */
+        /* ===== RESPONSIVE STYLES ===== */
+
+        /* Large Desktops (1200px and below) */
         @media (max-width: 1200px) {
             .container {
                 padding: 0 30px;
@@ -703,11 +732,24 @@
             .about-intro-stats {
                 gap: 20px;
             }
+            
+            .timeline-item:nth-child(odd) .timeline-year {
+                right: -120px;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-year {
+                left: -120px;
+            }
         }
 
+        /* Tablets and Small Desktops (992px and below) */
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 48px;
+            }
+            
+            .section-title {
+                font-size: 36px;
             }
             
             .about-intro-content {
@@ -727,6 +769,11 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
+            .timeline {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            
             .timeline::before {
                 left: 30px;
             }
@@ -743,6 +790,8 @@
             .timeline-year {
                 left: 0 !important;
                 right: auto !important;
+                top: -25px;
+                width: 100px;
             }
             
             .timeline-dot {
@@ -753,69 +802,161 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 40px;
             }
+            
+            .cta-title {
+                font-size: 42px;
+            }
         }
 
+        /* Mobile Devices (768px and below) */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            /* Mobile Navigation */
+            .mobile-toggle {
+                display: block;
+            }
+            
             .nav-menu {
-                display: none;
                 position: fixed;
-                top: 80px;
-                left: 0;
+                top: 0;
+                left: -100%;
                 width: 100%;
-                background-color: #0a0b0f;
-                padding: 30px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                height: 100vh;
+                background-color: rgba(10, 11, 15, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+                z-index: 999;
+                gap: 0;
             }
             
             .nav-menu.active {
-                display: block;
+                left: 0;
             }
             
             .nav-list {
                 flex-direction: column;
-                gap: 20px;
+                gap: 30px;
+                margin-bottom: 40px;
             }
             
-            .mobile-toggle {
-                display: block;
+            .nav-link {
+                font-size: 18px;
+                padding: 10px 0;
+            }
+            
+            /* Hero section mobile */
+            .hero {
+                min-height: 700px;
             }
             
             .hero-title {
                 font-size: 40px;
             }
             
+            .hero-description {
+                font-size: 16px;
+            }
+            
             .hero-buttons {
                 flex-direction: column;
-                width: 100%;
+                gap: 15px;
             }
             
             .cta-button, .secondary-button {
                 width: 100%;
-                text-align: center;
+                padding: 18px 24px;
+                font-size: 16px;
             }
             
-            .section {
-                padding: 80px 0;
-            }
-            
+            /* About intro mobile */
             .about-intro-stats {
                 grid-template-columns: 1fr;
             }
             
+            /* Team grid mobile */
             .team-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
             
+            .team-member {
+                padding: 0;
+            }
+            
+            /* Values grid mobile */
             .values-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .value-card {
+                padding: 40px 30px;
+            }
+            
+            .value-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+            
+            /* Timeline mobile */
+            .timeline {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            
+            .timeline-content {
+                margin-left: 60px !important;
+            }
+            
+            .timeline-year {
+                width: 90px;
+                height: 40px;
+                font-size: 16px;
+                top: -20px;
+            }
+            
+            /* CTA mobile */
+            .cta-title {
+                font-size: 36px;
+            }
+            
+            .cta-description {
+                font-size: 16px;
+            }
+            
+            /* Footer mobile */
+            .footer {
+                padding: 60px 0 30px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-bottom {
+                padding-top: 30px;
+            }
+            
+            /* Logo text hide on mobile */
+            .logo-text {
+                display: none;
             }
         }
 
+        /* Small Mobile Devices (576px and below) */
         @media (max-width: 576px) {
-            .container {
-                padding: 0 20px;
-            }
-            
             .hero-title {
                 font-size: 36px;
             }
@@ -824,14 +965,128 @@
                 font-size: 32px;
             }
             
-            .footer-grid {
-                grid-template-columns: 1fr;
+            .section-header {
+                margin-bottom: 50px;
             }
+            
+            .hero-subtitle,
+            .section-subtitle {
+                font-size: 14px;
+            }
+            
+            .stat-item {
+                padding: 25px 15px;
+            }
+            
+            .stat-number {
+                font-size: 36px;
+            }
+            
+            .timeline-content {
+                padding: 20px;
+            }
+            
+            .timeline-year {
+                width: 80px;
+                height: 35px;
+                font-size: 14px;
+                padding: 0 10px;
+            }
+            
+            .cta-title {
+                font-size: 32px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Very Small Mobile Devices (375px and below) */
+        @media (max-width: 375px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .about-intro-text h3 {
+                font-size: 26px;
+            }
+            
+            .team-member-info {
+                padding: 20px;
+            }
+            
+            .team-member-name {
+                font-size: 20px;
+            }
+            
+            .value-card {
+                padding: 30px 20px;
+            }
+            
+            .timeline-year {
+                width: 70px;
+                font-size: 13px;
+            }
+            
+            .cta-title {
+                font-size: 28px;
+            }
+        }
+
+        /* Fix for iOS Safari 100vh issue */
+        @supports (-webkit-touch-callout: none) {
+            .hero {
+                height: -webkit-fill-available;
+                min-height: -webkit-fill-available;
+            }
+        }
+
+        /* Prevent horizontal scrolling */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Improve touch targets on mobile */
+        @media (max-width: 768px) {
+            .cta-button,
+            .secondary-button,
+            .nav-link,
+            .team-member,
+            .value-card,
+            .social-link,
+            .footer-links a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .mobile-toggle {
+                min-width: 44px;
+                min-height: 44px;
+            }
+            
+            .team-member {
+                align-items: stretch;
+            }
+        }
+
+        /* Performance optimizations */
+        .hero-video,
+        .team-member-image img,
+        .about-intro-image img {
+            will-change: transform;
         }
     </style>
 </head>
 <body>
-    <!-- Header - Exactly like index.html -->
+    <!-- Header & Navigation -->
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -839,9 +1094,9 @@
                 <span class="logo-text">Media & Studios</span>
             </a>
             
-            <div class="mobile-toggle" id="mobileToggle">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
             
             <nav class="nav-menu" id="navMenu">
                 <ul class="nav-list">
@@ -851,13 +1106,12 @@
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
+                <a href="contact.html" class="cta-button">Start a Project</a>
             </nav>
-            
-            <a href="contact.html" class="cta-button">Start a Project</a>
         </div>
     </header>
 
-    <!-- Hero Section - Using index.html hero structure -->
+    <!-- Hero Section -->
     <section class="hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="https://github.com/qwuitty-prog/CineVibe_Media_-_Studios/raw/main/assets/videos/hero.mp4" type="video/mp4">
@@ -917,7 +1171,7 @@
                 </div>
                 
                 <div class="about-intro-image">
-                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="CineVibe Studio">
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="CineVibe Studio" loading="lazy">
                 </div>
             </div>
         </div>
@@ -934,7 +1188,7 @@
             <div class="team-grid">
                 <div class="team-member">
                     <div class="team-member-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Alex Morgan">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Alex Morgan" loading="lazy">
                     </div>
                     <div class="team-member-info">
                         <h3 class="team-member-name">Alex Morgan</h3>
@@ -948,7 +1202,7 @@
                 
                 <div class="team-member">
                     <div class="team-member-image">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Sophia Chen">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Sophia Chen" loading="lazy">
                     </div>
                     <div class="team-member-info">
                         <h3 class="team-member-name">Sophia Chen</h3>
@@ -962,7 +1216,7 @@
                 
                 <div class="team-member">
                     <div class="team-member-image">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Marcus Rodriguez">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Marcus Rodriguez" loading="lazy">
                     </div>
                     <div class="team-member-info">
                         <h3 class="team-member-name">Marcus Rodriguez</h3>
@@ -976,7 +1230,7 @@
                 
                 <div class="team-member">
                     <div class="team-member-image">
-                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Jamie Wilson">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Jamie Wilson" loading="lazy">
                     </div>
                     <div class="team-member-info">
                         <h3 class="team-member-name">Jamie Wilson</h3>
@@ -1108,7 +1362,7 @@
         </div>
     </section>
 
-    <!-- CTA Section - Exactly like index.html -->
+    <!-- CTA Section -->
     <section class="cta-section section">
         <div class="container">
             <div class="cta-container">
@@ -1122,7 +1376,7 @@
         </div>
     </section>
 
-    <!-- Footer - Exactly like index.html -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -1198,7 +1452,7 @@
     </footer>
 
     <script>
-        // Header scroll effect - Exactly like index.html
+        // Header scroll effect - EXACTLY like index.html
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
             if (window.scrollY > 50) {
@@ -1208,43 +1462,117 @@
             }
         });
 
-        // Mobile menu toggle - Exactly like index.html
+        // Mobile menu toggle - EXACTLY like index.html
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
+        const body = document.body;
         
-        mobileToggle.addEventListener('click', function() {
+        function toggleMobileMenu() {
             navMenu.classList.toggle('active');
-        });
+            body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        }
+        
+        mobileToggle.addEventListener('click', toggleMobileMenu);
 
-        // Close mobile menu when clicking on a link - Exactly like index.html
+        // Close mobile menu when clicking on a link - EXACTLY like index.html
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    body.style.overflow = '';
+                }
             });
         });
 
-        // Video fallback for browsers that don't autoplay - Exactly like index.html
+        // Close mobile menu when clicking outside - EXACTLY like index.html
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.nav-menu') && 
+                !event.target.closest('.mobile-toggle') && 
+                navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        // Close mobile menu with Escape key - EXACTLY like index.html
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        // Video fallback for browsers that don't autoplay - EXACTLY like index.html
         document.addEventListener('DOMContentLoaded', function() {
             const video = document.querySelector('.hero-video');
-            video.play().catch(error => {
-                console.log('Video autoplay failed:', error);
+            if (video) {
+                video.play().catch(error => {
+                    console.log('Video autoplay failed:', error);
+                });
+            }
+        });
+
+        // Close mobile menu on window resize (if resizing to desktop) - EXACTLY like index.html
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        // Smooth scrolling for anchor links - EXACTLY like index.html
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        body.style.overflow = '';
+                    }
+                }
             });
         });
 
-        // Additional JavaScript for about page specific features
-        // Team member hover animation
-        const teamMembers = document.querySelectorAll('.team-member');
-        teamMembers.forEach(member => {
-            member.addEventListener('mouseenter', function() {
-                this.style.zIndex = '10';
+        // Add loading="lazy" to all images - EXACTLY like index.html
+        document.querySelectorAll('img').forEach(img => {
+            if (!img.hasAttribute('loading')) {
+                img.setAttribute('loading', 'lazy');
+            }
+        });
+
+        // Prevent zoom on double tap for mobile - EXACTLY like index.html
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, { passive: false });
+
+        // Improve button feedback on mobile - EXACTLY like index.html
+        document.querySelectorAll('.cta-button, .secondary-button').forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
             });
             
-            member.addEventListener('mouseleave', function() {
-                this.style.zIndex = '1';
+            button.addEventListener('touchend', function() {
+                this.style.transform = '';
             });
         });
 
+        // Additional about page specific animations
         // Timeline animation on scroll
         const observerOptions = {
             threshold: 0.2
@@ -1268,24 +1596,49 @@
             observer.observe(item);
         });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href') === '#') return;
-                
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
+        // Team member hover z-index fix
+        const teamMembers = document.querySelectorAll('.team-member');
+        teamMembers.forEach(member => {
+            member.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            member.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+
+        // Stat counter animation
+        const statItems = document.querySelectorAll('.stat-item');
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const text = statNumber.textContent;
+                    const finalValue = parseInt(text);
+                    const suffix = text.replace(/[0-9]/g, '');
+                    let startValue = 0;
+                    const duration = 2000;
+                    const increment = finalValue / (duration / 16);
+                    
+                    const counter = () => {
+                        startValue += increment;
+                        if (startValue < finalValue) {
+                            statNumber.textContent = Math.floor(startValue) + suffix;
+                            setTimeout(counter, 16);
+                        } else {
+                            statNumber.textContent = finalValue + suffix;
+                        }
+                    };
+                    
+                    counter();
+                    statObserver.unobserve(entry.target);
                 }
             });
+        }, { threshold: 0.5 });
+
+        statItems.forEach(item => {
+            statObserver.observe(item);
         });
     </script>
 </body>
