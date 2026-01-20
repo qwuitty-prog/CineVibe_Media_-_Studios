@@ -9,11 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
+        /* ===== BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -39,6 +43,12 @@
             list-style: none;
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .container {
             width: 100%;
             max-width: 1400px;
@@ -50,7 +60,49 @@
             padding: 100px 0;
         }
 
-        /* Header Styles */
+        /* ===== BUTTONS ===== */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
+        }
+
+        .secondary-button {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .secondary-button:hover {
+            border-color: #00c6ff;
+            color: #00c6ff;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
         .header {
             position: fixed;
             top: 0;
@@ -59,6 +111,7 @@
             z-index: 1000;
             padding: 25px 0;
             transition: all 0.4s ease;
+            background-color: transparent;
         }
 
         .header.scrolled {
@@ -80,6 +133,7 @@
             font-size: 28px;
             font-weight: 800;
             color: #ffffff;
+            z-index: 1001;
         }
 
         .logo-accent {
@@ -91,9 +145,11 @@
             letter-spacing: 1px;
         }
 
+        /* Desktop Navigation */
         .nav-menu {
             display: flex;
             align-items: center;
+            gap: 40px;
         }
 
         .nav-list {
@@ -129,53 +185,19 @@
             background: linear-gradient(90deg, #00c6ff, #0072ff);
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 15px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
-        }
-
-        .secondary-button {
-            display: inline-block;
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 15px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .secondary-button:hover {
-            border-color: #00c6ff;
-            color: #00c6ff;
-        }
-
+        /* Mobile Navigation Toggle */
         .mobile-toggle {
             display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
             font-size: 24px;
             cursor: pointer;
-            color: #ffffff;
+            padding: 5px;
+            z-index: 1001;
         }
 
-        /* Hero Section - Exactly like index.html */
+        /* ===== HERO SECTION ===== */
         .hero {
             height: 100vh;
             min-height: 800px;
@@ -243,10 +265,9 @@
             gap: 20px;
         }
 
-        /* Services Overview - Matched to index.html service cards style */
+        /* ===== SERVICES OVERVIEW ===== */
         .services-overview {
             background-color: #0f1117;
-            position: relative;
         }
 
         .section-header {
@@ -349,7 +370,7 @@
             transform: scale(1.03);
         }
 
-        /* Detailed Services - Using index.html service card grid structure */
+        /* ===== DETAILED SERVICES ===== */
         .detailed-services {
             background-color: #0a0b0f;
         }
@@ -369,15 +390,15 @@
         }
 
         .category-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #00c6ff, #0072ff);
             border-radius: 8px;
             margin-right: 30px;
-            font-size: 32px;
+            font-size: 28px;
             flex-shrink: 0;
         }
 
@@ -401,7 +422,7 @@
         .service-detail-card {
             background-color: #151821;
             border-radius: 8px;
-            padding: 40px;
+            padding: 50px 40px;
             transition: all 0.4s ease;
             border: 1px solid rgba(255, 255, 255, 0.05);
             height: 100%;
@@ -419,16 +440,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0, 198, 255, 0.1);
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
             border-radius: 8px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-size: 24px;
-            color: #00c6ff;
         }
 
         .detail-card-title {
             font-size: 22px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: #ffffff;
         }
 
@@ -469,7 +489,7 @@
             font-weight: bold;
         }
 
-        /* Process Section - Matched to index.html values section */
+        /* ===== PROCESS SECTION ===== */
         .process-section {
             background-color: #0f1117;
             position: relative;
@@ -500,15 +520,15 @@
         }
 
         .process-step-number {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #00c6ff, #0072ff);
-            border-radius: 50%;
+            border-radius: 8px;
             margin: 0 auto 30px;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             color: #0a0b0f;
             position: relative;
@@ -526,7 +546,7 @@
             line-height: 1.8;
         }
 
-        /* Pricing Section - Using index.html service card structure */
+        /* ===== PRICING SECTION ===== */
         .pricing-section {
             background-color: #0a0b0f;
         }
@@ -617,7 +637,7 @@
         }
 
         .pricing-title {
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 20px;
             color: #ffffff;
         }
@@ -653,7 +673,7 @@
             border-bottom: none;
         }
 
-        /* FAQ Section - Using index.html service card styling */
+        /* ===== FAQ SECTION ===== */
         .faq-section {
             background-color: #0f1117;
         }
@@ -722,7 +742,7 @@
             transform: rotate(45deg);
         }
 
-        /* CTA Section - Exactly like index.html */
+        /* ===== CTA SECTION ===== */
         .cta-section {
             background: linear-gradient(90deg, #0f1117 0%, #151821 100%);
             text-align: center;
@@ -752,7 +772,7 @@
             margin-right: auto;
         }
 
-        /* Footer - Exactly like index.html */
+        /* ===== FOOTER ===== */
         .footer {
             background-color: #07080c;
             padding: 80px 0 40px;
@@ -839,7 +859,9 @@
             font-size: 14px;
         }
 
-        /* Responsive Styles - Matched to index.html */
+        /* ===== RESPONSIVE STYLES ===== */
+
+        /* Large Desktops (1200px and below) */
         @media (max-width: 1200px) {
             .container {
                 padding: 0 30px;
@@ -857,11 +879,20 @@
             .pricing-grid {
                 gap: 20px;
             }
+            
+            .service-detail-card {
+                padding: 40px 30px;
+            }
         }
 
+        /* Tablets and Small Desktops (992px and below) */
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 48px;
+            }
+            
+            .section-title {
+                font-size: 36px;
             }
             
             .services-overview-content {
@@ -904,49 +935,9 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 40px;
             }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: #0a0b0f;
-                padding: 30px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            }
             
-            .nav-menu.active {
-                display: block;
-            }
-            
-            .nav-list {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .mobile-toggle {
-                display: block;
-            }
-            
-            .hero-title {
-                font-size: 40px;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .cta-button, .secondary-button {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .section {
-                padding: 80px 0;
+            .cta-title {
+                font-size: 42px;
             }
             
             .category-header {
@@ -958,7 +949,90 @@
                 margin-right: 0;
                 margin-bottom: 20px;
             }
+        }
+
+        /* Mobile Devices (768px and below) */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
             
+            .section {
+                padding: 70px 0;
+            }
+            
+            /* Mobile Navigation */
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(10, 11, 15, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+                z-index: 999;
+                gap: 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 30px;
+                margin-bottom: 40px;
+            }
+            
+            .nav-link {
+                font-size: 18px;
+                padding: 10px 0;
+            }
+            
+            /* Hero section mobile */
+            .hero {
+                min-height: 700px;
+            }
+            
+            .hero-title {
+                font-size: 40px;
+            }
+            
+            .hero-description {
+                font-size: 16px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .cta-button, .secondary-button {
+                width: 100%;
+                padding: 18px 24px;
+                font-size: 16px;
+            }
+            
+            /* Services overview mobile */
+            .services-overview-text h3 {
+                font-size: 28px;
+            }
+            
+            .feature-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            
+            /* Process steps mobile */
             .process-steps {
                 grid-template-columns: 1fr;
             }
@@ -967,18 +1041,67 @@
                 display: none;
             }
             
+            .process-step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+            
+            /* Pricing mobile */
             .pricing-grid {
                 grid-template-columns: 1fr;
                 max-width: 400px;
                 margin: 0 auto;
             }
-        }
-
-        @media (max-width: 576px) {
-            .container {
-                padding: 0 20px;
+            
+            .pricing-card {
+                padding: 40px 30px;
             }
             
+            .pricing-price {
+                font-size: 48px;
+            }
+            
+            /* FAQ mobile */
+            .faq-question {
+                padding: 20px;
+            }
+            
+            .faq-question h3 {
+                font-size: 16px;
+            }
+            
+            /* CTA mobile */
+            .cta-title {
+                font-size: 36px;
+            }
+            
+            .cta-description {
+                font-size: 16px;
+            }
+            
+            /* Footer mobile */
+            .footer {
+                padding: 60px 0 30px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-bottom {
+                padding-top: 30px;
+            }
+            
+            /* Logo text hide on mobile */
+            .logo-text {
+                display: none;
+            }
+        }
+
+        /* Small Mobile Devices (576px and below) */
+        @media (max-width: 576px) {
             .hero-title {
                 font-size: 36px;
             }
@@ -987,26 +1110,138 @@
                 font-size: 32px;
             }
             
+            .section-header {
+                margin-bottom: 50px;
+            }
+            
+            .hero-subtitle,
+            .section-subtitle {
+                font-size: 14px;
+            }
+            
             .category-title {
                 font-size: 28px;
             }
             
             .service-detail-card {
-                padding: 30px;
+                padding: 30px 20px;
+            }
+            
+            .detail-card-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                margin-bottom: 20px;
             }
             
             .pricing-card {
-                padding: 40px 30px;
+                padding: 30px 20px;
             }
             
-            .footer-grid {
-                grid-template-columns: 1fr;
+            .pricing-price {
+                font-size: 42px;
             }
+            
+            .cta-title {
+                font-size: 32px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Very Small Mobile Devices (375px and below) */
+        @media (max-width: 375px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .services-overview-text h3 {
+                font-size: 24px;
+            }
+            
+            .category-title {
+                font-size: 24px;
+            }
+            
+            .process-step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .process-step-title {
+                font-size: 18px;
+            }
+            
+            .pricing-tabs {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .pricing-tab.active:after {
+                bottom: -11px;
+            }
+            
+            .cta-title {
+                font-size: 28px;
+            }
+        }
+
+        /* Fix for iOS Safari 100vh issue */
+        @supports (-webkit-touch-callout: none) {
+            .hero {
+                height: -webkit-fill-available;
+                min-height: -webkit-fill-available;
+            }
+        }
+
+        /* Prevent horizontal scrolling */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Improve touch targets on mobile */
+        @media (max-width: 768px) {
+            .cta-button,
+            .secondary-button,
+            .nav-link,
+            .pricing-tab,
+            .faq-question,
+            .social-link,
+            .footer-links a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .mobile-toggle {
+                min-width: 44px;
+                min-height: 44px;
+            }
+            
+            .feature-item {
+                align-items: center;
+            }
+        }
+
+        /* Performance optimizations */
+        .hero-video,
+        .services-overview-image img,
+        .service-detail-card {
+            will-change: transform;
         }
     </style>
 </head>
 <body>
-    <!-- Header - Exactly like index.html -->
+    <!-- Header & Navigation -->
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -1014,9 +1249,9 @@
                 <span class="logo-text">Media & Studios</span>
             </a>
             
-            <div class="mobile-toggle" id="mobileToggle">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
             
             <nav class="nav-menu" id="navMenu">
                 <ul class="nav-list">
@@ -1026,13 +1261,12 @@
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
+                <a href="contact.html" class="cta-button">Start a Project</a>
             </nav>
-            
-            <a href="contact.html" class="cta-button">Start a Project</a>
         </div>
     </header>
 
-    <!-- Hero Section - Exactly like index.html -->
+    <!-- Hero Section -->
     <section class="hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="https://github.com/qwuitty-prog/CineVibe_Media_-_Studios/raw/main/assets/videos/hero.mp4" type="video/mp4">
@@ -1109,7 +1343,7 @@
                 </div>
                 
                 <div class="services-overview-image">
-                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Video Production Studio">
+                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Video Production Studio" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1506,7 +1740,7 @@
         </div>
     </section>
 
-    <!-- CTA Section - Exactly like index.html -->
+    <!-- CTA Section -->
     <section class="cta-section section">
         <div class="container">
             <div class="cta-container">
@@ -1520,7 +1754,7 @@
         </div>
     </section>
 
-    <!-- Footer - Exactly like index.html -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -1596,7 +1830,7 @@
     </footer>
 
     <script>
-        // Header scroll effect - Exactly like index.html
+        // Header scroll effect - EXACTLY like index.html
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
             if (window.scrollY > 50) {
@@ -1606,27 +1840,113 @@
             }
         });
 
-        // Mobile menu toggle - Exactly like index.html
+        // Mobile menu toggle - EXACTLY like index.html
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
+        const body = document.body;
         
-        mobileToggle.addEventListener('click', function() {
+        function toggleMobileMenu() {
             navMenu.classList.toggle('active');
-        });
+            body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        }
+        
+        mobileToggle.addEventListener('click', toggleMobileMenu);
 
-        // Close mobile menu when clicking on a link - Exactly like index.html
+        // Close mobile menu when clicking on a link - EXACTLY like index.html
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    body.style.overflow = '';
+                }
             });
         });
 
-        // Video fallback for browsers that don't autoplay - Exactly like index.html
+        // Close mobile menu when clicking outside - EXACTLY like index.html
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.nav-menu') && 
+                !event.target.closest('.mobile-toggle') && 
+                navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        // Close mobile menu with Escape key - EXACTLY like index.html
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        // Video fallback for browsers that don't autoplay - EXACTLY like index.html
         document.addEventListener('DOMContentLoaded', function() {
             const video = document.querySelector('.hero-video');
-            video.play().catch(error => {
-                console.log('Video autoplay failed:', error);
+            if (video) {
+                video.play().catch(error => {
+                    console.log('Video autoplay failed:', error);
+                });
+            }
+        });
+
+        // Close mobile menu on window resize (if resizing to desktop) - EXACTLY like index.html
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        // Smooth scrolling for anchor links - EXACTLY like index.html
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        body.style.overflow = '';
+                    }
+                }
+            });
+        });
+
+        // Add loading="lazy" to all images - EXACTLY like index.html
+        document.querySelectorAll('img').forEach(img => {
+            if (!img.hasAttribute('loading')) {
+                img.setAttribute('loading', 'lazy');
+            }
+        });
+
+        // Prevent zoom on double tap for mobile - EXACTLY like index.html
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, { passive: false });
+
+        // Improve button feedback on mobile - EXACTLY like index.html
+        document.querySelectorAll('.cta-button, .secondary-button').forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            button.addEventListener('touchend', function() {
+                this.style.transform = '';
             });
         });
 
@@ -1647,38 +1967,19 @@
                     if (planType === 'single') {
                         // For single projects, show all cards
                         card.style.display = 'block';
-                        
-                        // Update prices for different plans
-                        if (card.getAttribute('data-plan') === 'single') {
-                            // Keep original pricing
-                        } else if (card.getAttribute('data-plan') === 'retainer') {
-                            // Change to retainer pricing
-                            const priceElement = card.querySelector('.pricing-price');
-                            if (card.classList.contains('popular')) {
-                                priceElement.innerHTML = '$2,999<span>/month</span>';
-                            } else if (card.querySelector('.pricing-title').textContent === 'Essential') {
-                                priceElement.innerHTML = '$1,499<span>/month</span>';
-                            } else {
-                                priceElement.innerHTML = '$4,999<span>/month</span>';
-                            }
-                        } else if (card.getAttribute('data-plan') === 'enterprise') {
-                            // Change to enterprise pricing
-                            const priceElement = card.querySelector('.pricing-price');
-                            priceElement.innerHTML = 'Custom<span>/quote</span>';
-                        }
                     } else if (planType === 'retainer') {
                         // Show only retainer cards with appropriate pricing
-                        if (card.getAttribute('data-plan') === 'retainer') {
-                            card.style.display = 'block';
-                        } else {
+                        if (card.getAttribute('data-plan') === 'single') {
                             card.style.display = 'none';
+                        } else {
+                            card.style.display = 'block';
                         }
                     } else if (planType === 'enterprise') {
                         // Show only enterprise cards
-                        if (card.getAttribute('data-plan') === 'enterprise') {
-                            card.style.display = 'block';
-                        } else {
+                        if (card.getAttribute('data-plan') === 'single') {
                             card.style.display = 'none';
+                        } else {
+                            card.style.display = 'block';
                         }
                     }
                 });
@@ -1704,39 +2005,19 @@
             });
         });
 
-        // Smooth scrolling for anchor links - Exactly like index.html/previous pages
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href') === '#') return;
-                
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Service card hover animations
+        // Service card hover z-index fix
         const serviceCards = document.querySelectorAll('.service-detail-card');
-        serviceCards.forEach((card, index) => {
-            card.addEventListener('mouseenter', function() {
+        serviceCards.forEach(member => {
+            member.addEventListener('mouseenter', function() {
                 this.style.zIndex = '10';
             });
             
-            card.addEventListener('mouseleave', function() {
+            member.addEventListener('mouseleave', function() {
                 this.style.zIndex = '1';
             });
         });
 
-        // Animation for process steps on scroll
+        // Animation for elements on scroll
         const observerOptions = {
             threshold: 0.2
         };
@@ -1759,6 +2040,15 @@
             observer.observe(step);
         });
 
+        // Apply to service detail cards
+        document.querySelectorAll('.service-detail-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+
         // Apply to pricing cards
         document.querySelectorAll('.pricing-card').forEach((card, index) => {
             card.style.opacity = '0';
@@ -1768,13 +2058,13 @@
             observer.observe(card);
         });
 
-        // Apply to service cards
-        document.querySelectorAll('.service-detail-card').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            card.style.transitionDelay = `${index * 0.1}s`;
-            observer.observe(card);
+        // Apply to FAQ items
+        document.querySelectorAll('.faq-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            item.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(item);
         });
     </script>
 </body>
